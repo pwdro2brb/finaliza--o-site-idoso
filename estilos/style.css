@@ -90,7 +90,7 @@
   button{
     font-family:'Poppings',sans-serif;
     background:linear-gradient(90deg,#0062ff,#0062ff,#0062ff) ;
-    width: 100%;
+    width: 40vw;
     height: 40px;
     border:none;
     font-size:1.2em;
@@ -268,7 +268,7 @@ hr {
   display: none;
 }
 img{
-  width: min-content;
+  width: 15vw;
 }
 #fo{
     /* height: 100%; */

@@ -10,7 +10,7 @@
         justify-content: center;
         /* align-content: center; */
         margin: 0;
-        background-color: #d1ffea;
+        background-color:#d1ffea;
     }
 
 button{
@@ -42,25 +42,23 @@ img{
     justify-items: self-end;
 }
 
-.form{
-
-        /* padding-top: 100px; */
-        /* left: 50%; */
-        /* top: 50%; */
-        border-radius: 10px;
-        /* padding: 60px; */
-        width: 30vmin;
-        height: 30vmin;
-        display: inline-grid;
-        background-color: #00eeffff;
-        /* justify-content: space-around; */
-        /* justify-items: center; */
-        /* margin-top: 10vw;*/
-    }
+.form {
+  /* padding-top: 100px; */
+  /* left: 50%; */
+  /* border-radius: 10px; */
+  padding: 60px;
+  width: 30vmin;
+  height: 83.5vmin;
+  display: inline-grid;
+  background-color: #00eeffff;
+  /* justify-content: space-around; */
+  /* justify-items: center; */
+  position: absolute;
+}
 
 
 #jogo-cobra{
- background-color: aliceblue;
+ background-color: #ccc;
  width: 100vmin;
  height: 100vmin;
  display: grid;

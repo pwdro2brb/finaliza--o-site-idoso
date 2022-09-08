@@ -122,8 +122,11 @@ function getDireçaoInput() {
 }
 
 function main(currentTime){
-    if(gameOver){
-        return alert('Você perdeu')
+    if (gameOver) {
+        if (confirm('Você perdeu, aperte OK para recomeçar.')) {
+            window.location = './jogo_da_cobra.html	'
+        }
+        return 
     } 
     window.requestAnimationFrame(main)
     const secondsSinceLastRender = (currentTime- lastRenderTime)/1000

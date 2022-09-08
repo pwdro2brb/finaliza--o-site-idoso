@@ -1,17 +1,21 @@
 let lastRenderTime = 0
 const cobra_velocidade = 5 //velocidade do jogo(cobra)
-let ultimaDireçaoInput = { x: 0, y: 0 }
+const GRID_SIZE = 21
 
-let comida = { x: 10, y: 10 }
 const corpoCobra= [{ x: 11, y: 11 }]
 let direçaoInput = { x: 0, y: 0 }
 
+let comida = getPosiçaoAleatoriaComida()
+
 const expansao_rate = 1
 let newSegment = 0
+let ultimaDireçaoInput = { x: 0, y: 0 }
+
 const gameBoard = document.getElementById('jogo-cobra')
 
 
 function updateCobra(){
+    addSegments()
     const direçaoInput = getDireçaoInput()
     for (let i = corpoCobra.length - 2; i >= 0; i--) {
         corpoCobra[i + 1] = { ...corpoCobra[i] }
@@ -53,7 +57,7 @@ function drawnComida(gameBoard){
 function updateComida() {
     if (onCobra(comida)){
         expandirCobra(expansao_rate)
-        comida = { x: 20, y: 20 }        
+        comida = getPosiçaoAleatoriaComida()       
     }
 }
 
@@ -83,8 +87,29 @@ function main(currentTime){
     draw()
 }
 
-window.requestAnimationFrame(main)
+function addSegments() {
+    for (let i=0; i< newSegment; i++){
+        corpoCobra.push({...corpoCobra[corpoCobra.length - 1]})
+    }
+    newSegment = 0
+}
 
+ function randomGridPosition() {
+return {
+    x: Math.floor(Math.random() * GRID_SIZE) + 1,
+    y: Math.floor(Math.random() * GRID_SIZE) + 1
+}
+}
+
+function getPosiçaoAleatoriaComida() {
+let newposiçaoComida
+while (newposiçaoComida == null || onCobra(newposiçaoComida)){
+    newposiçaoComida = randomGridPosition()
+}
+return newposiçaoComida
+}
+
+window.requestAnimationFrame(main)
 
 
 window.addEventListener('keydown', e =>{

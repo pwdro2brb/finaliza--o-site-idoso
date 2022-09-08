@@ -1,10 +1,9 @@
 let lastRenderTime = 0
-const cobra_velocidade = 2 //velocidade do jogo(cobra)
+const cobra_velocidade = 5 //velocidade do jogo(cobra)
 let ultimaDireçaoInput = { x: 0, y: 0 }
-const corpoCobra= [
-    { x: 11, y: 11 }
-]
-
+let comida = { x: 10, y: 0 }
+const corpoCobra= [{ x: 11, y: 11 }]
+let direçaoInput = { x: 0, y: 0 }
 const gameBoard = document.getElementById('jogo-cobra')
 
 
@@ -21,6 +20,7 @@ function updateCobra(){
 } 
 
 
+
 function drawnCobra(gameBoard){
     corpoCobra.forEach(segment => {
         const elementoDaCobra = document.createElement('div')
@@ -33,6 +33,19 @@ function drawnCobra(gameBoard){
 //função para o desenho da cobra
 } 
 
+function drawnComida(gameBoard){
+        const elementComida = document.createElement('div')
+        elementComida.style.gridRowStart = comida.x
+        elementComida.style.gridColumnStart = comida.y
+        elementComida.classList.add('comida')
+        gameBoard.appendChild(elementComida)
+
+//função para o desenho da comida da cobra
+} 
+
+function updateComida() {
+
+}
 
 function main(currentTime){
     window.requestAnimationFrame(main)
@@ -49,7 +62,8 @@ function main(currentTime){
 window.requestAnimationFrame(main)
 
 
-let direçaoInput = { x: 0, y: 0 }
+
+
 
 window.addEventListener('keydown', e =>{
     switch (e.key) {
@@ -83,9 +97,11 @@ function getDireçaoInput() {
 
 function update(){
 updateCobra()
+updateComida()
 }
 
 function draw(){
 gameBoard.innerHTML =' '    
 drawnCobra(gameBoard)
+drawnComida(gameBoard)
 }

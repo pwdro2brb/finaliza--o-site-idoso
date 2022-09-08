@@ -30,17 +30,6 @@ img{
     width: 15vw;
   }
 
-  #form{
-    height: 100%;
-    padding: 2vw;
-    position: relative;
-    border-radius: 10px;
-    justify-content: center;
-    align-items: baseline;
-    background-color: #53bfed;
-    align-content: center;
-    justify-items: self-end;
-}
 
 .form {
   /* padding-top: 100px; */

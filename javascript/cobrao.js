@@ -11,7 +11,10 @@ const expansao_rate = 1
 let newSegment = 0
 let ultimaDireçaoInput = { x: 0, y: 0 }
 
+let gameOver = false
+
 const gameBoard = document.getElementById('jogo-cobra')
+
 
 
 function updateCobra(){
@@ -27,20 +30,6 @@ function updateCobra(){
 //função para a atualização da cobra(para ela se mexer)
 } 
 
-
-
-function drawnCobra(gameBoard){
-    corpoCobra.forEach(segment => {
-        const elementoDaCobra = document.createElement('div')
-        elementoDaCobra.style.gridRowStart = segment.x
-        elementoDaCobra.style.gridColumnStart = segment.y
-        elementoDaCobra.classList.add('cobra')
-        gameBoard.appendChild(elementoDaCobra)
-    });
-
-//função para o desenho da cobra
-
-} 
 
 
 
@@ -65,8 +54,37 @@ function expandirCobra(amount){
     newSegment += amount
 }
 
-function onCobra(position){
-    return corpoCobra.some(segment =>{
+function outsideGrid(position) {
+    return(
+        position.x < 1 || position.x > GRID_SIZE ||
+        position.y < 1 || position.y > GRID_SIZE
+    )
+}
+
+function getCabçaDaCobra() {
+ return corpoCobra[0]
+}
+
+function interseiçaoDaCobra() {
+    return onCobra(corpoCobra[0], {ignoreHead:true})
+}
+
+function drawnCobra(gameBoard){
+    corpoCobra.forEach(segment => {
+        const elementoDaCobra = document.createElement('div')
+        elementoDaCobra.style.gridRowStart = segment.x
+        elementoDaCobra.style.gridColumnStart = segment.y
+        elementoDaCobra.classList.add('cobra')
+        gameBoard.appendChild(elementoDaCobra)
+    });
+
+//função para o desenho da cobra
+
+} 
+
+function onCobra(position, {ignoreHead = false} = {}) {
+    return corpoCobra.some((segment, index) =>{
+        if (ignoreHead && index === 0) return false
       return posiçoesEguais(segment, position)
     })
 }
@@ -75,17 +93,6 @@ function posiçoesEguais(pos1, pos2) {
     return pos1.x === pos2.x && pos1.y === pos2.y
 }
 
-function main(currentTime){
-    window.requestAnimationFrame(main)
-    const secondsSinceLastRender = (currentTime- lastRenderTime)/1000
-    if(secondsSinceLastRender < 1 / cobra_velocidade) return 
-   
-//função para calcular o tempo e movimento do jogo
-    lastRenderTime = currentTime
-    
-    update()
-    draw()
-}
 
 function addSegments() {
     for (let i=0; i< newSegment; i++){
@@ -107,6 +114,26 @@ while (newposiçaoComida == null || onCobra(newposiçaoComida)){
     newposiçaoComida = randomGridPosition()
 }
 return newposiçaoComida
+}
+
+function getDireçaoInput() {
+ ultimaDireçaoInput = direçaoInput //serve para consertar o bug de a cobra poder dar ré(no jogo da cobra isso não existe)
+    return direçaoInput
+}
+
+function main(currentTime){
+    if(gameOver){
+        return alert('Você perdeu')
+    } 
+    window.requestAnimationFrame(main)
+    const secondsSinceLastRender = (currentTime- lastRenderTime)/1000
+    if(secondsSinceLastRender < 1 / cobra_velocidade) return 
+   
+//função para calcular o tempo e movimento do jogo
+    lastRenderTime = currentTime
+    
+    update()
+    draw()
 }
 
 window.requestAnimationFrame(main)
@@ -137,14 +164,13 @@ window.addEventListener('keydown', e =>{
 }
 })
 
-function getDireçaoInput() {
- ultimaDireçaoInput = direçaoInput //serve para consertar o bug de a cobra poder dar ré(no jogo da cobra isso não existe)
-    return direçaoInput
-}
+
+
 
 function update(){
 updateCobra()
 updateComida()
+cheacarDerrota()
 }
 
 function draw(){
@@ -152,3 +178,7 @@ gameBoard.innerHTML =' '
 drawnCobra(gameBoard)
 drawnComida(gameBoard)
 }
+
+function cheacarDerrota() {
+    gameOver = outsideGrid(getCabçaDaCobra()) || interseiçaoDaCobra()
+  }

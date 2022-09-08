@@ -1,9 +1,13 @@
 let lastRenderTime = 0
 const cobra_velocidade = 5 //velocidade do jogo(cobra)
 let ultimaDireçaoInput = { x: 0, y: 0 }
-let comida = { x: 10, y: 0 }
+
+let comida = { x: 10, y: 10 }
 const corpoCobra= [{ x: 11, y: 11 }]
 let direçaoInput = { x: 0, y: 0 }
+
+const expansao_rate = 1
+let newSegment = 0
 const gameBoard = document.getElementById('jogo-cobra')
 
 
@@ -31,7 +35,10 @@ function drawnCobra(gameBoard){
     });
 
 //função para o desenho da cobra
+
 } 
+
+
 
 function drawnComida(gameBoard){
         const elementComida = document.createElement('div')
@@ -44,7 +51,24 @@ function drawnComida(gameBoard){
 } 
 
 function updateComida() {
+    if (onCobra(comida)){
+        expandirCobra(expansao_rate)
+        comida = { x: 20, y: 20 }        
+    }
+}
 
+function expandirCobra(amount){
+    newSegment += amount
+}
+
+function onCobra(position){
+    return corpoCobra.some(segment =>{
+      return posiçoesEguais(segment, position)
+    })
+}
+
+function posiçoesEguais(pos1, pos2) {
+    return pos1.x === pos2.x && pos1.y === pos2.y
 }
 
 function main(currentTime){
@@ -60,8 +84,6 @@ function main(currentTime){
 }
 
 window.requestAnimationFrame(main)
-
-
 
 
 

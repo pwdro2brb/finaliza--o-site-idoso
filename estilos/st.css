@@ -1,0 +1,95 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+    font-family: "Poppins", sans-serif;
+    }
+
+body{
+       background-color:#d1ffea;
+    }
+
+.wrapper{
+    box-sizing: border-box;
+    width: 26.87em;
+    padding: 2.5em 3em;
+    background-color: white;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+    border-radius: 0.6em;
+    box-shadow: 0 0.9em 2.8em rgba(86, 66, 0, 0.2);
+}
+
+.form {
+    /* padding-top: 100px; */
+    /* left: 50%; */
+    /* top: 50%; */
+    border-radius: 10px;
+    padding: 60px;
+    /* width: min-content; */
+    display: flow-root;
+    background-color: #00eeffff;
+    justify-content: space-around;
+    justify-items: center;
+    /* margin-top: 10vw; */
+}
+
+    #form{
+        height: 100%;
+        padding: 2vw;
+        position: relative;
+        border-radius: 10px;
+        justify-content: center;
+        align-items: baseline;
+        background-color: #53bfed;
+        align-content: center;
+        justify-items: self-end;
+    }
+
+    button{
+        font-family:'Poppings',sans-serif;
+        background:linear-gradient(90deg,#0062ff,#0062ff,#0062ff) ;
+        width: 50vh;
+        height: 40px;
+        border:none;
+        font-size:1.2em;
+        color:black;
+        border-radius:20px;
+        outline:none;
+        cursor:pointer;
+      }
+  
+      
+    @-webkit-keyframes AnimationName {
+        0%{background-position:0% 50%}
+        50%{background-position:100% 50%}
+        100%{background-position:0% 50%}
+    }
+    @-moz-keyframes AnimationName {
+        0%{background-position:0% 50%}
+        50%{background-position:100% 50%}
+        100%{background-position:0% 50%}
+    }
+    @keyframes AnimationName {
+        0%{background-position:0% 50%}
+        50%{background-position:100% 50%}
+        100%{background-position:0% 50%}
+    }
+
+      
+  @media only screen and (min-width: 600px) {
+  
+    .form {width: 500px;}
+    #form {width: 500px;}
+  
+  }
+  
+  @media only screen and (min-width: 768px) {
+   
+    .form {width: 500px;}
+    #form {width: 500px;}
+  }
+  
+  

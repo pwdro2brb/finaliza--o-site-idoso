@@ -46,21 +46,32 @@ body{
         background-color: #53bfed;
         align-content: center;
         justify-items: self-end;
+        font-size: 3.44vmin;
     }
-
+a:-webkit-any-link {
+    color: -webkit-link;
+    cursor: default;
+    text-decoration: none;
+    font-size: 3.44vmin;
+}
     button{
+        font-size: 3.44vmin;
         font-family:'Poppings',sans-serif;
         background:linear-gradient(90deg,#0062ff,#0062ff,#0062ff) ;
-        width: 50vh;
-        height: 40px;
+        height: 5vmin;
+        width: 35vmin;
         border:none;
-        font-size:1.2em;
         color:black;
         border-radius:20px;
         outline:none;
         cursor:pointer;
       }
   
+      .game-container{
+        position: relative;
+        width: 100%;
+        display: grid;
+      }
       
     @-webkit-keyframes AnimationName {
         0%{background-position:0% 50%}

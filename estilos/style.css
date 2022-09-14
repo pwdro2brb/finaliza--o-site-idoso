@@ -284,3 +284,16 @@ img{
     flex-wrap: nowrap;
     flex-direction: column;
 }
+.i{
+  font-size: 3.44vmin;
+  transform: translate(0%, 1100%);
+  height: 100%;
+  padding: 2vw;
+  position: relative;
+  border-radius: 10px;
+  justify-content: center;
+  align-items: baseline;
+  background-color: #53bfed;
+  align-content: center;
+  justify-items: self-end;
+}

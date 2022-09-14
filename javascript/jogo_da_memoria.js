@@ -27,3 +27,30 @@ const itens = [
 ]
 
 //tempo inicial
+
+let seconds = 0
+  minutes = 0
+// movimentos iniciais e contagem de vitórias
+let contMovimentaçao = 0
+  contagemVitoria = 0
+// for tempo
+const geradorTempo = () =>{
+    seconds+=1
+    //logica dos minutos
+    if (seconds >= 60){
+        minutes += 1
+        seconds = 0
+    }
+//formato do tempo de mostrar na tela
+let valorSegundos = seconds < 10 ? `0${seconds}` :
+seconds
+let valorMinutos = minutes < 10 ? `0${minutes}` :
+minutes
+valorTempo.innerHTML = `<span>Tempo:</span>${valorMinutos}:${valorSegundos}`
+}
+
+//for calculando movimentos
+const contadorMovimentos = () =>{
+    quantidadeMovimento += 1
+    moves.innerHTML = `<span>Movimentos:</span>${quantidadeMovimento}`
+}

@@ -54,3 +54,30 @@ const contadorMovimentos = () =>{
     quantidadeMovimento += 1
     moves.innerHTML = `<span>Movimentos:</span>${quantidadeMovimento}`
 }
+//pegar um objeto aleatório no array de item 
+const gerarRandom = (size = 4) =>{
+    //array temporário
+    let arrayTemp = [...itens]
+    //inicializa o array do valor da carta 
+    let valorCartas = []
+    //O tamanho deve ser o dobro (4*4 matrix)/2 estes pares de objetos devem existir
+    size = (size*size) / 2
+    //seletor de um objeto aleátorio
+    for (let i = 0; i < size; i++){
+        const indexAleatorio = Math.floor(Math.random() * arrayTemp.length)
+        valorCartas.push(arrayTemp[indexAleatorio])
+        //uma vez selecionado remove o objeto do array temporário
+        tempArray.splice(randomIndex, 1)
+    }
+    return valorCartas
+}
+
+const geradorMatrix = (valorCartas, size = 4) => {
+    containerJogo.innerHTML = ""
+    valorCartas = [...valorCartas, ...valorCartas]
+    //simples embaralhamento
+    valorCartas.sort(() => Math.random() - 0,5)
+    for(let i=0; i<size*size;i++){
+
+    }
+}

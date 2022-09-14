@@ -10,3 +10,20 @@ let primeiraCarta = false
 let segundaCarta = false
 
 //arrays de itens
+
+const itens = [
+    {name: "abelha", image: "belha.jpg"},
+    {name: "barco", image: "barco.jpg"},
+    {name: "bela-imagem", image: "belissima.jpg"},
+    {name: "carro", image: "cars.jpg"},
+    {name: "cavalo", image: "CAVALO.jpg"},
+    {name: "vibora", image: "cobra.jpg"},
+    {name: "CRUZ", image: "Cruz.jpg"},
+    {name: "escola", image: "ecoola.jpg"},
+    {name: "leao", image: "leon.jpg"},
+    {name: "peixe", image: "peixe.jpg"},
+    {name: "aviao", image: "plane.jpg"},
+    {name: "vaca", image: "VACA.jpg"},
+]
+
+//tempo inicial

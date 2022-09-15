@@ -96,6 +96,8 @@ containerJogo.innerHTML += `
 </div>
 `;
     }
+    //grid
+    containerJogo.style.gridTemplateColumns = `repeat(${size},auto)`
 }
 
 //inicia valores e calculos de funções

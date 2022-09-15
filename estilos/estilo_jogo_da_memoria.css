@@ -9,25 +9,26 @@ body{
        background-color:#d1ffea;
     }
 
-.wrapper{
-    box-sizing: border-box;
-    width: 26.87em;
-    padding: 2.5em 3em;
-    background-color: white;
-    position: absolute;
-    transform: translate(-50%, -50%);
-    left: 50%;
-    top: 50%;
-    border-radius: 0.6em;
-    box-shadow: 0 0.9em 2.8em rgba(86, 66, 0, 0.2);
-}
+    .wrapper {
+      box-sizing: border-box;
+      width: auto;
+      padding: 2.5em 3em;
+      background-color: white;
+      position: absolute;
+      transform: translate(-50%, -43.6%);
+      left: 50%;
+      top: 50%;
+      border-radius: 0.6em;
+      box-shadow: 0 0.9em 2.8em rgb(86 66 0 / 20%);
+      margin-top: 35vh;
+    }
 
 .form {
     /* padding-top: 100px; */
     /* left: 50%; */
     /* top: 50%; */
     border-radius: 10px;
-    padding: 60px;
+    padding: 4vh;
     /* width: min-content; */
     display: flow-root;
     background-color: #00eeffff;
@@ -35,7 +36,6 @@ body{
     justify-items: center;
     /* margin-top: 10vw; */
     font-size: 3.44vmin;
-    transform: translate(0%, 1100%);
 }
 
     #form{
@@ -49,7 +49,7 @@ body{
         align-content: center;
         justify-items: self-end;
         font-size: 3.44vmin;
-        transform: translate(0%, 1100%);
+        transform: translate(0%, 632%);
     }
 a:-webkit-any-link {
     color: -webkit-link;
@@ -74,8 +74,15 @@ a:-webkit-any-link {
         position: relative;
         width: 100%;
         display: grid;
+        gap: 0.6em;
       }
-      
+      .container-carta{
+        position: relative;
+        width: 6.25em;
+        height: 6.25em;
+        cursor: pointer;
+      }
+
     @-webkit-keyframes AnimationName {
         0%{background-position:0% 50%}
         50%{background-position:100% 50%}
@@ -93,20 +100,15 @@ a:-webkit-any-link {
     }
 
       
-  @media only screen and (min-width: 600px) {
+
   
-    .form {width: 500px;}
-    #form {width: 500px;}
-  
-  }
-  
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: 268px) {
    
-    .form {width: 500px;}
-    #form {width: 500px;}
+    .form {width: fit-content;}
+    #form {width: fit-content;}
   }
   
-  img{
-    height: 20vmin;
-    width: 20vmin;
-  }
+ img{
+height: 10vmin;
+width:10vmin;
+ }

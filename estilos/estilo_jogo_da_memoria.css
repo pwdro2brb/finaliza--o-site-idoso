@@ -1,8 +1,8 @@
 *{
-    margin: 0;
-    padding: 0;
-    box-sizing:border-box;
-    font-family: "Poppins", sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
     }
 
 body{
@@ -10,17 +10,17 @@ body{
     }
 
     .wrapper {
-      box-sizing: border-box;
-      width: auto;
+      box-sizing: content-box;
+     /* width: 26.87em;*/
       padding: 2.5em 3em;
-      background-color: white;
+      background-color: #ffffff;
       position: absolute;
-      transform: translate(-50%, -43.6%);
+      transform: translate(-50%, -50%);
       left: 50%;
       top: 50%;
       border-radius: 0.6em;
-      box-shadow: 0 0.9em 2.8em rgb(86 66 0 / 20%);
-      margin-top: 35vh;
+      box-shadow: 0 0.9em 2.8em rgba(86, 66, 0, 0.2);
+      margin-top: 55vh;
     }
 
 .form {
@@ -28,7 +28,7 @@ body{
     /* left: 50%; */
     /* top: 50%; */
     border-radius: 10px;
-    padding: 4vh;
+    padding: 60px;
     /* width: min-content; */
     display: flow-root;
     background-color: #00eeffff;
@@ -36,9 +36,10 @@ body{
     justify-items: center;
     /* margin-top: 10vw; */
     font-size: 3.44vmin;
+    transform: translate(0%, 4%);
 }
 
-    #form{
+#form{
         height: 100%;
         padding: 2vw;
         position: relative;
@@ -49,15 +50,17 @@ body{
         align-content: center;
         justify-items: self-end;
         font-size: 3.44vmin;
-        transform: translate(0%, 632%);
+        transform: translate(0%, 1100%);
     }
+
 a:-webkit-any-link {
     color: -webkit-link;
     cursor: default;
     text-decoration: none;
     font-size: 3.44vmin;
 }
-    button{
+
+button{
         font-size: 3.44vmin;
         font-family:'Poppings',sans-serif;
         background:linear-gradient(90deg,#0062ff,#0062ff,#0062ff) ;
@@ -69,20 +72,51 @@ a:-webkit-any-link {
         outline:none;
         cursor:pointer;
       }
-  
-      .game-container{
-        position: relative;
-        width: 100%;
-        display: grid;
-        gap: 0.6em;
-      }
-      .container-carta{
-        position: relative;
-        width: 6.25em;
-        height: 6.25em;
-        cursor: pointer;
-      }
 
+  .game-container{
+      position: relative;
+      width: 100%;
+      display: grid;
+      gap: 0.6em;
+    }
+
+  .container-carta{
+  position: relative;
+    width: 6.25em;
+    height: 6.25em;
+    cursor: pointer;
+  }
+
+  .carta-antes,
+  .carta-depois{
+    position: absolute;
+    border-radius: 5px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 4px solid #000000;
+    transition: transform 0.7s ease-out;
+    backface-visibility: hidden;
+  }
+
+  .carta-depois {
+ background-color: #f4c531;
+    font-size: 2.8em;
+    font-weight: 600;
+        /*transform: translate(133.7%, 45%);*/
+  } 
+   .carta-antes{
+    background-color: #ffffff;
+    transform: rotateY(180deg);
+  }   
+  .container-carta.flipped .carta-depois {
+        transform: rotateY(180deg);
+  } 
+   .container-carta.flipped .carta-antes {
+       transform: rotateY(0deg);
+  }
     @-webkit-keyframes AnimationName {
         0%{background-position:0% 50%}
         50%{background-position:100% 50%}
@@ -100,15 +134,19 @@ a:-webkit-any-link {
     }
 
       
-
+  @media only screen and (min-width: 600px) {
   
+    .form {width: 500px;}
+    #form {width: 500px;}
+  
+  }
   @media only screen and (min-width: 268px) {
-   
+
     .form {width: fit-content;}
     #form {width: fit-content;}
   }
-  
- img{
-height: 10vmin;
-width:10vmin;
- }
+
+  img{
+    height: 15vmin;
+    width: 15vmin;
+  }

@@ -89,15 +89,15 @@ const geradorMatrix = (valorCartas, size = 4) => {
     valorCartas.sort(() => Math.random() - 0,5)
     for(let i=0; i<size*size;i++){
 containerJogo.innerHTML += `
-<div class="container-carta" data-card-value="${valorCartas[i].name}"
-<div class="carta-antes">?</div>
-<div class="carta-depois">
-<img src="./imagens_jogo_da_memória/${valorCartas[i].image}" class="imagem"/></div>
+<div class="container-carta" data-card-value="${valorCartas[i].name}">
+<div class="carta-depois">?</div>
+<div class="carta-antes"> <img src="./imagens_jogo_da_memória/${valorCartas[i].image}" class="imagem">
+</div>
 </div>
 `;
     }
     //grid
-    containerJogo.style.gridTemplateColumns = `repeat(${size},auto)`
+    containerJogo.style.gridTemplateColumns = `repeat(4,auto)`
 }
 
 //inicia valores e calculos de funções

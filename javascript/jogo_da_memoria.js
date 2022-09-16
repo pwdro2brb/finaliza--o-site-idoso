@@ -98,6 +98,43 @@ containerJogo.innerHTML += `
     }
     //grid
     containerJogo.style.gridTemplateColumns = `repeat(4,auto)`
+
+
+    //cartas
+    cartas = document.querySelectorAll(".container-carta")
+    cartas.forEach((carta) =>{
+        carta.addEventListener("click", () =>{
+            if(!carta.classList.contains("matched")){
+                //vira a carta
+                carta.classList.add("flipped")
+                //se for a 1º carta que é dado inicialmente como falso por causa de (!primeira-carta)
+                if(!primeiraCarta){
+                    //A carta atual torna-se a primeira carta
+                    primeiraCarta = carta
+                    //O valor atual da carta se torna o primeiro valor da Carta
+                    primeiroValorCarta = carta.getAttribute("data-card-value")
+                } 
+            }else{
+                //incrementa movimentos para o usuário selecionar a segunda carta
+                contadorMovimentos()
+                //segunda carta e valor
+                segundaCarta = carta
+                let valorSegundaCarta = carta.getAttribute("data-card-value")
+                if (primeiroValorCarta == valorSegundaCarta){
+                    //se as duas cartas forem iguais elas serão ignoradas na próxima vez
+                    primeiraCarta.classList.add("matched")
+                    segundaCarta.classList.add("matched")
+                    //adiciona a primeiraCarta para falso, agora a próxima carta será a primeira
+                    contagemVitoria += 1
+                    //checa se a quantidade de vitórias ==metade dos valores de cartas
+                    if (contagemVitoria == Math.floor(valorCartas.lenght / 2)){
+                        resul.innerHTML = `<h2>Você venceu!!!</h2> <h4>Quantidade de movimentos: ${quantidadeMovimento}</h4>`
+                        paraJogo()
+                    }
+                }
+            }
+        })
+    })
 }
 
 //inicia valores e calculos de funções

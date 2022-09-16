@@ -1,6 +1,7 @@
 const moves = document.getElementById("contador-movimento")
 const valorTempo = document.getElementById("tempo")
 const botaoComeçar = document.getElementById("start")
+const botaoParar = document.getElementById("pare")
 const containerJogo =  document.querySelector(".game-container")
 const resul = document.getElementById("resultado")
 const controles = document.querySelector(".container-de-controle")
@@ -114,28 +115,54 @@ containerJogo.innerHTML += `
                     //O valor atual da carta se torna o primeiro valor da Carta
                     primeiroValorCarta = carta.getAttribute("data-card-value")
                 } 
-            }else{
-                //incrementa movimentos para o usuário selecionar a segunda carta
-                contadorMovimentos()
-                //segunda carta e valor
-                segundaCarta = carta
-                let valorSegundaCarta = carta.getAttribute("data-card-value")
-                if (primeiroValorCarta == valorSegundaCarta){
-                    //se as duas cartas forem iguais elas serão ignoradas na próxima vez
-                    primeiraCarta.classList.add("matched")
-                    segundaCarta.classList.add("matched")
-                    //adiciona a primeiraCarta para falso, agora a próxima carta será a primeira
-                    contagemVitoria += 1
-                    //checa se a quantidade de vitórias ==metade dos valores de cartas
-                    if (contagemVitoria == Math.floor(valorCartas.lenght / 2)){
-                        resul.innerHTML = `<h2>Você venceu!!!</h2> <h4>Quantidade de movimentos: ${quantidadeMovimento}</h4>`
-                        paraJogo()
+                else{
+                    //incrementa movimentos para o usuário selecionar a segunda carta
+                    contadorMovimentos()
+                    //segunda carta e valor
+                    segundaCarta = carta
+                    let valorSegundaCarta = carta.getAttribute("data-card-value")
+                    if (primeiroValorCarta == valorSegundaCarta){
+                        //se as duas cartas forem iguais elas serão ignoradas na próxima vez
+                        primeiraCarta.classList.add("matched")
+                        segundaCarta.classList.add("matched")
+                        //adiciona a primeiraCarta para falso, agora a próxima carta será a primeira
+                        contagemVitoria += 1
+                        //checa se a quantidade de vitórias ==metade dos valores de cartas
+                        if (contagemVitoria == Math.floor(valorCartas.lenght / 2)){
+                            resul.innerHTML = `<h2>Você venceu!!!</h2> <h4>Quantidade de movimentos: ${quantidadeMovimento}</h4>`
+                            paraJogo()
+                        }
+                    }else{
+                        //Se a carta não é igual
+                        //Vira ela de volta ao normal
+                        let [tempoPrimeiro, tempoSegundo] = [primeiraCarta, segundaCarta]
+                        primeiraCarta = false
+                        segundaCarta = false
+                        let delay = fimTempo(() => {
+                           tempoPrimeiro.classList.remove("flipped")
+                           tempoSegundo.classList.remove("flipped")
+                        }, 900)
                     }
                 }
             }
         })
     })
 }
+
+//inicia o jogo
+botaoComeçar.addEventListener("click", () =>{
+    contadorMovimentos = 0
+    tempo = 0
+    //ctroles e bottões (visibilidade)
+    controles.classList.add("hide")
+    botaoParar.classList.remove("esconda")
+    botaoComeçar.classList.remove("esconda")
+    //começa tempo
+    interval = setInterval(geradorTempo, 1000)
+    //primeiros movimentos
+    moves.innerHTML = `<span>Movimentos: </span> ${contadorMovimentos}`
+    iniciar()
+})
 
 //inicia valores e calculos de funções
 const iniciar = () => {
@@ -145,5 +172,3 @@ const iniciar = () => {
    console.log(valorCartas)
    geradorMatrix(valorCartas)
 }
-
-iniciar();

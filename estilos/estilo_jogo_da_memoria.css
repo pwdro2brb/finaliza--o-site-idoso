@@ -139,7 +139,7 @@ font-weight: 600;
   #pare{
     font-size: 1.1em;
     display: block;
-    margin: 1.1em auto 0;
+    margin: 1.1em auto 0 auto;
     background-color: #000000;
     color: #ffffff;
   }
@@ -149,6 +149,16 @@ font-weight: 600;
   }
   .esconda{
     display: none;
+  }
+  #resul{
+    text-align: center;
+  }
+  #resul h2 {
+    font-size: 2.5em;
+  }
+  #resul h4 {
+    font-size: 1.8em;
+    margin: 0.6em 0 1em 0;
   }
     @-webkit-keyframes AnimationName {
         0%{background-position:0% 50%}

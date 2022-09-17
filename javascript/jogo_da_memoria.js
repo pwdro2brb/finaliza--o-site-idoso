@@ -1,5 +1,5 @@
 const moves = document.getElementById("contador-movimento")
-const valorTempo = document.getElementById("tempo")
+const valorTempo = document.getElementById("time")
 const botaoComeçar = document.getElementById("start")
 const botaoParar = document.getElementById("pare")
 const containerJogo =  document.querySelector(".game-container")
@@ -27,15 +27,15 @@ const itens = [
     {name: "vaca", image: "vaca.png"}
 ]
 
-//tempo inicial
+//time inicial
 let seconds = 0
   minutes = 0
 
 // movimentos iniciais e contagem de vitórias
-let contMovimentaçao = 0
+let contadorMovimentos = 0
   contagemVitoria = 0
 
-// for tempo
+// for time
 const geradorTempo = () =>{
     seconds+=1
 
@@ -45,11 +45,9 @@ const geradorTempo = () =>{
         seconds = 0
     }
 
-//formato do tempo de mostrar na tela
-let valorSegundos = seconds < 10 ? `0${seconds}` :
-seconds
-let valorMinutos = minutes < 10 ? `0${minutes}` :
-minutes
+//formato do time de mostrar na tela
+let valorSegundos = seconds < 10 ? `0${seconds}` : seconds;
+let valorMinutos = minutes < 10 ? `0${minutes}` : minutes;
 valorTempo.innerHTML = `<span>Tempo:</span>${valorMinutos}:${valorSegundos}`
 }
 
@@ -62,7 +60,7 @@ const contadorMov = () =>{
 //pegar um objeto aleatório no array de item 
 const gerarRandom = (size = 4) =>{
 
-    //array temporário
+    //array timerário
     let arrayTemp = [...itens]
 
     //inicializa o array do valor da carta 
@@ -76,7 +74,7 @@ const gerarRandom = (size = 4) =>{
         const indexAleatorio = Math.floor(Math.random() * arrayTemp.length)
         valorCartas.push(arrayTemp[indexAleatorio])
 
-        //uma vez selecionado remove o objeto do array temporário
+        //uma vez selecionado remove o objeto do array timerário
         arrayTemp.splice(indexAleatorio, 1)
     }
     return valorCartas
@@ -105,6 +103,7 @@ containerJogo.innerHTML += `
     cartas = document.querySelectorAll(".container-carta")
     cartas.forEach((carta) =>{
         carta.addEventListener("click", () =>{
+            //Se as cartas selecionadas não forem iguais
             if(!carta.classList.contains("matched")){
                 //vira a carta
                 carta.classList.add("flipped")
@@ -114,8 +113,7 @@ containerJogo.innerHTML += `
                     primeiraCarta = carta
                     //O valor atual da carta se torna o primeiro valor da Carta
                     primeiroValorCarta = carta.getAttribute("data-card-value")
-                } 
-                else{
+                }  else{
                     //incrementa movimentos para o usuário selecionar a segunda carta
                     contadorMov()
                     //segunda carta e valor
@@ -126,6 +124,8 @@ containerJogo.innerHTML += `
                         primeiraCarta.classList.add("matched")
                         segundaCarta.classList.add("matched")
                         //adiciona a primeiraCarta para falso, agora a próxima carta será a primeira
+                        primeiraCarta = false
+                        //dá um incremento na contagem de vitória se o usuário está correto
                         contagemVitoria += 1
                         //checa se a quantidade de vitórias ==metade dos valores de cartas
                         if (contagemVitoria == Math.floor(valorCartas.lenght / 2)){
@@ -135,12 +135,12 @@ containerJogo.innerHTML += `
                     }else{
                         //Se a carta não é igual
                         //Vira ela de volta ao normal
-                        let [tempoPrimeiro, tempoSegundo] = [primeiraCarta, segundaCarta]
+                        let [timePrimeiro, timeSegundo] = [primeiraCarta, segundaCarta]
                         primeiraCarta = false
                         segundaCarta = false
-                        let delay = fimTempo(() => {
-                           tempoPrimeiro.classList.remove("flipped")
-                           tempoSegundo.classList.remove("flipped")
+                        let delay = setTimeout(() => {
+                           timePrimeiro.classList.remove("flipped")
+                           timeSegundo.classList.remove("flipped")
                         }, 900)
                     }
                 }
@@ -152,12 +152,13 @@ containerJogo.innerHTML += `
 //inicia o jogo
 botaoComeçar.addEventListener("click", () =>{
     contadorMovimentos = 0
-    tempo = 0
-    //ctroles e bottões (visibilidade)
+    seconds = 0
+    minutes = 0
+    //Controles e bottões (visibilidade)
     controles.classList.add("esconda")
     botaoParar.classList.remove("esconda")
     botaoComeçar.classList.add("esconda")
-    //começa tempo
+    //começa time
     interval = setInterval(geradorTempo, 1000)
     //primeiros movimentos
     moves.innerHTML = `<span>Movimentos: </span> ${contadorMovimentos}`

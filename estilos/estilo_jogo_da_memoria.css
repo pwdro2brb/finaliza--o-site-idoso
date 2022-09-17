@@ -79,6 +79,15 @@ button{
       gap: 0.6em;
     }
 
+    .container-de-status{
+      text-align: right;
+      margin-bottom: 1.2em;
+    }
+
+.container-de-status span{
+font-weight: 600;
+}
+
   .container-carta{
   position: relative;
     width: 6.25em;

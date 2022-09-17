@@ -54,9 +54,9 @@ valorTempo.innerHTML = `<span>Tempo:</span>${valorMinutos}:${valorSegundos}`
 }
 
 //for calculando movimentos
-const contadorMovimentos = () =>{
-    quantidadeMovimento += 1
-    moves.innerHTML = `<span>Movimentos:</span>${quantidadeMovimento}`
+const contadorMov = () =>{
+    contadorMovimentos += 1
+    moves.innerHTML = `<span>Movimentos:</span>${contadorMovimentos}`
 }
 
 //pegar um objeto aleatório no array de item 
@@ -117,7 +117,7 @@ containerJogo.innerHTML += `
                 } 
                 else{
                     //incrementa movimentos para o usuário selecionar a segunda carta
-                    contadorMovimentos()
+                    contadorMov()
                     //segunda carta e valor
                     segundaCarta = carta
                     let valorSegundaCarta = carta.getAttribute("data-card-value")
@@ -129,7 +129,7 @@ containerJogo.innerHTML += `
                         contagemVitoria += 1
                         //checa se a quantidade de vitórias ==metade dos valores de cartas
                         if (contagemVitoria == Math.floor(valorCartas.lenght / 2)){
-                            resul.innerHTML = `<h2>Você venceu!!!</h2> <h4>Quantidade de movimentos: ${quantidadeMovimento}</h4>`
+                            resul.innerHTML = `<h2>Você venceu!!!</h2> <h4>Quantidade de movimentos: ${contadorMovimentos}</h4>`
                             paraJogo()
                         }
                     }else{
@@ -154,9 +154,9 @@ botaoComeçar.addEventListener("click", () =>{
     contadorMovimentos = 0
     tempo = 0
     //ctroles e bottões (visibilidade)
-    controles.classList.add("hide")
+    controles.classList.add("esconda")
     botaoParar.classList.remove("esconda")
-    botaoComeçar.classList.remove("esconda")
+    botaoComeçar.classList.add("esconda")
     //começa tempo
     interval = setInterval(geradorTempo, 1000)
     //primeiros movimentos

@@ -165,6 +165,16 @@ botaoComeçar.addEventListener("click", () =>{
     iniciar()
 })
 
+//para o jogo
+botaoParar.addEventListener(
+    "click",( paraJogo = () => {
+        controles.classList.remove("esconda")
+        botaoParar.classList.add("esconda")
+        botaoComeçar.classList.remove("esconda")
+        clearInterval(interval)
+    })
+)
+
 //inicia valores e calculos de funções
 const iniciar = () => {
    resul.innerText = ""

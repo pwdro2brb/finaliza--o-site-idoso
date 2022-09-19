@@ -70,6 +70,7 @@ button{
         border-radius:20px;
         outline:none;
         cursor:pointer;
+        margin: 5mm;
       }
 
   .game-container{
@@ -144,7 +145,7 @@ font-weight: 600;
     color: #ffffff;
   }
   .container-de-controle button{
-    font-size: 1.3em;
+    font-size: 3vmin;
     box-shadow: 0 0.6em 2em rgba(86, 66, 0, 0.2);
   }
   .esconda{
@@ -192,8 +193,4 @@ font-weight: 600;
   img{
     height: 15vmin;
     width: 15vmin;
-  }
-
-  #pare{
-    margin-top: 10px;
   }

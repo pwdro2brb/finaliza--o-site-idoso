@@ -9,6 +9,8 @@ let cartas
 let interval
 let primeiraCarta = false
 let segundaCarta = false
+//contador para calcular a vitória
+let contadorNovo = 0
 
 //arrays de itens
 
@@ -123,14 +125,18 @@ containerJogo.innerHTML += `
                         //se as duas cartas forem iguais elas serão ignoradas na próxima vez
                         primeiraCarta.classList.add("matched")
                         segundaCarta.classList.add("matched")
+                        //método para o jogo acabar
+                        contadorNovo += 1
                         //adiciona a primeiraCarta para falso, agora a próxima carta será a primeira
                         primeiraCarta = false
                         //dá um incremento na contagem de vitória se o usuário está correto
-                        contagemVitoria += 1
-                        //checa se a quantidade de vitórias ==metade dos valores de cartas
-                        if (contagemVitoria == Math.floor(valorCartas.lenght / 2)){
+                        contagemVitoria + 1 
+                        
+                        //checa se a quantidade de conjutos pares de cartas iguais for um número igual a 8
+                        if (contadorNovo == 8){
                             resul.innerHTML = `<h2>Você venceu!!!</h2> <h4>Quantidade de movimentos: ${contadorMovimentos}</h4>`
                             paraJogo()
+                            console.log(contadorNovo)
                         }
                     }else{
                         //Se a carta não é igual
@@ -179,6 +185,8 @@ botaoParar.addEventListener(
 const iniciar = () => {
    resul.innerText = ""
    contadorVitoria = 0
+   //reinicia o valor do contador para não começar com um incremento de cada vitória
+   contadorNovo = 0
    let valorCartas = gerarRandom()
    console.log(valorCartas)
    geradorMatrix(valorCartas)

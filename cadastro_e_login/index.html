@@ -4,28 +4,39 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
-  
-  <link href="../estilos/style.css" rel="stylesheet" type="text/css" />
-</head>
+  <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  <link href="../estilos/estilo_telas_login_cadastro.css" rel="stylesheet" type="text/css" />
+    <script src="../javascript/script_telas_login_cadastro.js"></script>
+  </head>
 
 <body>
   <center>
-  <div class="form">
-     <form id="form">
+  <div class="container">
 
       <div class="logo"> 
+
        <h1>Idosos inomináveis</h1>
  <img src="../image/ICONE_SITE.jpg" >
 </div>
 
     <br />
    <br />
-      <div class="a">
-        <h1>Cadastro Tutor</h1>
-      </div>
+
+      <form autocomplete="off" >
+        <h4>Cadastro Tutor</h4>
+
+        <div class="input-section">
+          <label>Nome do tutor
+          <span class="required-color">*</span></label> 
+            <input type="text" placeholder="Digite o nome do tutor aqui" id="input-nome-tutor" required>
+        </div>
+     
    <br />
-      <div id="c">
-        <input type="text" placeholder="Digite o nome do tutor aqui">
+ 
+      
         <input type="number" placeholder="Digite o CPF do tutor aqui">
         <input type="email" placeholder="digite o seu e-mail aqui">
         <input type="password" placeholder="Senha" id="password" required>
@@ -41,14 +52,11 @@
         <br>
         <br>
        <a href="login.html"><button > Já tenho um cadastro!!</a></button>
-        </div>
+       
      
       </div>
-    </form>
+      </form>
 
-<p><br><br></p>
-
-    <script src="script.js"></script>
   </div>
 </center>
 </body>

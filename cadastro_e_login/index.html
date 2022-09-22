@@ -29,18 +29,33 @@
         <h4>Cadastro Tutor</h4>
 
         <div class="secao_input">
-            <label>Nome do tutor
-          <span class="required-color">*</span></label> 
-            <input type="text" placeholder="Digite o nome do tutor aqui" id="input-nome-tutor" required>
+          <label> Nome do tutor <span class="required-color">*</span></label> 
+          <input type="text" placeholder="Digite o nome do tutor aqui" id="input-nome-tutor" required>
           <span id="erro-nome-tutor" class="esconda required-color menssagem-erro">Valor inválido</span>
           <span id="vazio-nome-tutor" class="esconda required-color menssagem-erro">O nome do tutor não pode estar vazio</span>
           </div>
-     
-   <br />
- 
-      
+
+     <br>
+
+   <div class="secao-input">
+    <label for="Nome idoso">Nome do idoso <span class="required-color" >*</span></label>
+    <input type="text" placeholder="Coloque o nome do idoso" id="nome-idoso" required>
+    <span id="erro-nome-idoso" class="esconda required-color menssagem-erro" >Dados invalidos</span>
+    <span id="vazio-nome-idoso" class="esconda required-color menssagem-erro" >Nome do idoso não pode estar vazio</span>
+  </div>
+
+     <br> 
+
+<div class="secao-input">
+  <label>Email <span class="required-color">*</span></label>
+  <input type="email" placeholder="digite o seu e-mail aqui" id="email" required>
+  <span id="erro-email" class="esconda required-color menssagem-erro">Email invalido</span>
+  <span id="email-vazio" class="esconda required-color menssagem-erro">O mail não pode ser vazio</span>
+</div>
+
+      <br>
+
         <input type="number" placeholder="Digite o CPF do tutor aqui">
-        <input type="email" placeholder="digite o seu e-mail aqui">
         <input type="password" placeholder="Senha" id="password" required>
         <input type="password" placeholder="Confirmação de senha" id="confirm_password" required>
         <input type="number" placeholder="Adicione o seu telefone aqui">

@@ -53,7 +53,7 @@ body{
     }
 
 a:-webkit-any-link {
-    color: -webkit-link;
+    color:rgb(255, 255, 255);
     cursor: default;
     text-decoration: none;
     font-size: 3.44vmin;
@@ -66,7 +66,7 @@ button{
         height: 5vmin;
         width: 35vmin;
         border:none;
-        color:black;
+        color:rgb(255, 255, 255);
         border-radius:20px;
         outline:none;
         cursor:pointer;

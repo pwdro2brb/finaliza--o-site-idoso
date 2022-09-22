@@ -55,10 +55,10 @@ body{
     font-size: 3.44vmin;
     font-family:'Poppings',sans-serif;
     background:linear-gradient(90deg,#0062ff,#0062ff,#0062ff) ;
-    height: 5vmin;
-    width: 35vmin;
+    height: 8vmin;
+    width: 65vmin;
     border:none;
-    color:black;
+    color:rgb(255, 255, 255);
     border-radius:20px;
     outline:none;
     cursor:pointer;
@@ -125,6 +125,7 @@ img{
   .esconda{
     display: none;
   }
+
   @media only screen and (max-width: 450px) {
     .container{
       font-size: 14px;

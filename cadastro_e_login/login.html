@@ -13,40 +13,47 @@
 
 <body>
   <center>
-  <div class="form">
+  <div class="container">
 
-     <form id="form">
+    
        <div class="logo">
        <h1>Idosos inomináveis</h1>
        <img src="../image/ICONE_SITE.jpg" >
-</div>
+       </div>
 
-<hr>
-    <br />
-   <br />
+ <form autocomplete="off">
+  
+    <br /><br />
 
-       <div id="c">
-         <h1>Login</h1>
-      
+    <h1>Login</h1>
 
-       <br>
-       <br>
-   <input type ="text" placeholder="Nome do idoso aqui">
-  <input type ="text" placeholder="Digite a senha aqui">
-<div class="btn">
- <a href="../tela_inicial.html"> <button type="submit"> logar </a> </button>
-  <br>
-  <br>
-  <a href="../cadastro_e_login/index.html">
-   <button> Voltar para cadastro </a></button>  
-   </div>
-  </div>
-       <br>
+    <br> <br>
 
+    <div class="secao-input">
+      <label>Nome do idoso <span class="required-color">*</span></label>
+     <input type="text" placeholder="Digite o nome do idoso aqui " id="login-idoso" required>
+     <span id="erro-nome-idoso" class="esconda required-color menssagem-erro" >Dados invalidos</span>
+    <span id="vazio-nome-idoso" class="esconda required-color menssagem-erro" >Nome do idoso não pode estar vazio</span>
+    </div>
 
-  </div>
+       <br> <br>
+
+       <div class="secao-input">
+        <label>Senha <span class="required-color">*</span></label>
+       <input type="text" placeholder="Digite a senha aqui " id="login-senha" required>
+       <span id="erro-senha" class="esconda required-color menssagem-erro">A senha deve ter letras, números, caracteres especiais e ter 4 ou mais caracteres totais</span>
+       <span id="senha-vazia" class="esconda required-color menssagem-erro">A senha não pode estar vazia</span>
+     </div>
+
+  <br><br> 
+
+  <button onclick="window.location.href ='../tela_inicial.html'"> logar </button>
+ 
 </form>
-  <script src="script.js"></script>
+
+<button onclick="window.location.href ='./index.html'"> Voltar para cadastro</button>
+
+  <script src="../javascript/script_telas_login_cadastro.js"></script>
 </center>
 </body>
 

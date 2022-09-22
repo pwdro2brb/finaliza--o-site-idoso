@@ -13,6 +13,7 @@
   </head>
 
 <body>
+  
   <center>
   <div class="container">
 
@@ -37,7 +38,7 @@
           <span id="vazio-nome-tutor" class="esconda required-color menssagem-erro">O nome do tutor não pode estar vazio</span>
           </div>
 
-     <br>
+      <br><br>
 
    <div class="secao-input">
     <label for="Nome idoso">Nome do idoso <span class="required-color" >*</span></label>
@@ -46,7 +47,7 @@
     <span id="vazio-nome-idoso" class="esconda required-color menssagem-erro" >Nome do idoso não pode estar vazio</span>
   </div>
 
-     <br> 
+      <br> <br>
 
 <div class="secao-input">
   <label>Email <span class="required-color">*</span></label>
@@ -55,7 +56,7 @@
   <span id="email-vazio" class="esconda required-color menssagem-erro">O mail não pode ser vazio</span>
 </div>
 
-      <br>
+      <br><br>
 
       <div class="secao-input">
         <label>Número de telefone do Tutor <span class="required-color">*</span></label>
@@ -64,7 +65,7 @@
        <span id="telefone-vazio" class="esconda required-color menssagem-erro">O telefone não pode estar vazio</span>
       </div>
 
-      <br>
+      <br><br>
         
       <div class="secao-input">
         <label> senha <span class="required-color">*</span></label>
@@ -73,18 +74,28 @@
         <span id="senha-vazia" class="esconda required-color menssagem-erro">A senha não pode estar vazia</span>
       </div>
 
-        <input type="password" placeholder="Confirmação de senha" id="confirm_password" required>
-        <input type="file" placeholder="Adicione a sua foto aqui">
-        <div class="btn">
-        <button type="submit"> Cadastrar </button>
-          <br>
-        <br>
+      <br><br>
+
+      <div class="secao-input">
+        <label>Confirmar senha <span class="required-color">*</span></label>
+        <input type="password" placeholder="Confirmar senha" id="verificar-senha" required>
+        <span id="erro-verificar-senha" class="esconda required-color menssagem-erro">Deve ser igual a senha anterior</span>
+        <span id="verificar-senha-vazio" class="esconda required-color menssagem-erro">A senha não pode ser vazia</span>
+      </div>
+
+      <br><br> 
+
+        <button id="botao-cadastrar"> Cadastrar </button>
+
+      <br><br>
+
      <button onclick="window.location.href ='./login.html'"> Já tenho cadastro</button>
 
-      </div>
-    </form>
-  </div>
-</center>
-</body>
+     </form>
+
+   </div>
+  </center>
+
+ </body>
 
 </html>

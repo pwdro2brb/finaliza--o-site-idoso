@@ -58,7 +58,7 @@ img{
 }
 
 a:-webkit-any-link {
-  color: -webkit-link;
+  color: rgb(255, 255, 255);
   cursor: pointer;
   text-decoration: underline;
   font-size: 10vmin;

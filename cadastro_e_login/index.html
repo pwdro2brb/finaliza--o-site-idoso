@@ -28,7 +28,9 @@
       <form autocomplete="off" >
         <h4>Cadastro Tutor</h4>
 
-        <div class="secao_input">
+        <br />
+
+        <div class="secao-input">
           <label> Nome do tutor <span class="required-color">*</span></label> 
           <input type="text" placeholder="Digite o nome do tutor aqui" id="input-nome-tutor" required>
           <span id="erro-nome-tutor" class="esconda required-color menssagem-erro">Valor inválido</span>
@@ -55,25 +57,32 @@
 
       <br>
 
-        <input type="number" placeholder="Digite o CPF do tutor aqui">
-        <input type="password" placeholder="Senha" id="password" required>
+      <div class="secao-input">
+        <label>Número de telefone do Tutor <span class="required-color">*</span></label>
+       <input type="text" placeholder="Digite o número do tutor aqui " id="telefone" required>
+       <span id="erro-telefone" class="esconda required-color menssagem-erro">O número de telefone deve ter no mínimo 8 digitos</span>
+       <span id="telefone-vazio" class="esconda required-color menssagem-erro">O telefone não pode estar vazio</span>
+      </div>
+
+      <br>
+        
+      <div class="secao-input">
+        <label> senha <span class="required-color">*</span></label>
+        <input type="password" placeholder="Digite a senha aqui" id="senha" required>
+        <span id="erro-senha" class="esconda required-color menssagem-erro">A senha deve ter letras, números, caracteres especiais e ter 4 ou mais caracteres totais</span>
+        <span id="senha-vazia" class="esconda required-color menssagem-erro">A senha não pode estar vazia</span>
+      </div>
+
         <input type="password" placeholder="Confirmação de senha" id="confirm_password" required>
-        <input type="number" placeholder="Adicione o seu telefone aqui">
-        <input type="number" placeholder="confirmar telefone">
         <input type="file" placeholder="Adicione a sua foto aqui">
         <div class="btn">
-        <button type="submit"> <a href="idoso.html">Cadastrar</a></button> 
+        <button type="submit"> Cadastrar </button>
           <br>
         <br>
+     <button onclick="window.location.href ='./login.html'"> Já tenho cadastro</button>
 
-        <br>
-        <br>
-       <a href="login.html"><button > Já tenho um cadastro!!</a></button>
-       
-     
       </div>
-      </form>
-
+    </form>
   </div>
 </center>
 </body>

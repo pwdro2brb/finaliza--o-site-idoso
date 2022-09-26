@@ -68,8 +68,6 @@ body{
 hr {
   display: none;
   }
-
-
 img{
   width: 15vw;
   }
@@ -82,7 +80,6 @@ img{
     margin: 1em auto;
     border-radius: 0.5em;
   }
-
   h4{
     font-size: 1.5em;
     margin: auto;
@@ -99,6 +96,7 @@ img{
     margin-bottom: 0.5em;
     font-weight: 500;
   }
+
   .menssagem-Error{
     margin-top: 0.2em;
   }
@@ -109,6 +107,7 @@ img{
     padding: 0.5em;
     border-radius: 0.3em;
   }
+
   input{
     padding: 1em 0.5em;
     border: 1.5px solid white;
@@ -116,16 +115,17 @@ img{
   .required-color{
     color: #ff4747;
   }
+
   .Error{
     border-color: #ff4747;
   }
   .valid{
     border-color: #37a137;
   }
+
   .esconda{
     display: none;
   }
-
   @media only screen and (max-width: 450px) {
     .container{
       font-size: 14px;

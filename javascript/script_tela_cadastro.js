@@ -51,7 +51,7 @@ const verificadorSenha= (senha) =>{
  //Valores que devem existir na senha, não precisa ser todos  
     const regex = 
        /^(?=.+[a-z])(?=.+[A-Z])(?=.+[0-9])(?=.+[\$\%\^\&\!@\#\*\(\)\+\=`~\?\>\<])/ 
-    return regex.test(senha) && senha.lenght >= 8
+       return regex.test(senha) && senha.length >= 4;
 }
 
 //verificador de texto (para os inputs que deveriam conter apenas texto)
@@ -64,7 +64,7 @@ const verificadorTexto = (text) =>{
 //Verificador do telefone
 
 const verificadorTelefone = (number) => {
-    const regex = /^[0-9]{8}$/
+    const regex = /^[0-9]{11}$/
     return regex.test(number)
 }
 
@@ -133,6 +133,45 @@ idoso_nome_input.addEventListener("input", () =>{
     errorUpdate(idoso_nome_input, error_idoso)
     //checador de vazio
     vazioUpdate(idoso_nome_input, vazio_idoso, error_idoso)
+    }
+})
+
+email_input.addEventListener("input", () =>{
+    if (verificadorEmail(email_input.value)){
+        //se a verificação retornar verdadeiro
+        error_email.classList.add("esconda")
+        validInput(email_input)
+    } else {
+    //para falso
+    errorUpdate(email_input, error_email)
+    //checador de vazio
+    vazioUpdate(email_input, vazio_email, error_email)
+    }
+})
+
+telefone_input.addEventListener("input", () =>{
+    if (verificadorTelefone(telefone_input.value)){
+        //se a verificação retornar verdadeiro
+        error_telefone.classList.add("esconda")
+        validInput(telefone_input)
+    } else {
+    //para falso
+    errorUpdate(telefone_input, error_telefone)
+    //checador de vazio
+    vazioUpdate(telefone_input, vazio_telefone, error_telefone)
+    }
+})
+
+senha_input.addEventListener("input", () =>{
+    if (verificadorSenha(senha_input.value)){
+        //se a verificação retornar verdadeiro
+        error_senha.classList.add("esconda")
+        validInput( senha_input)
+    } else {
+    //para falso
+    errorUpdate(senha_input, error_senha)
+    //checador de vazio
+    vazioUpdate(senha_input, vazio_senha, error_senha)
     }
 })
 

@@ -6,9 +6,9 @@ let vazio_idoso_login = document.getElementById("vazio-nome-idoso-login")
 
 //Senha no login
 
-let login_senha_input = document.getElementById("login-senha")
-let erro_login_senha = document.getElementById("Error-senha-login")
-let vazio_senha_login = document.getElementById("senha-vazia-login")
+let login_Senha_input = document.getElementById("senha2")
+let error_senha = document.getElementById("Error-senha")
+let vazio_senha = document.getElementById("senha-vazia")
 
 //Botão logar 
 
@@ -21,11 +21,11 @@ let classesInvalidas = document.getElementById("Error")
 
 //verificador de senha
 
-const verificadorSenha= (senha) =>{
+const verificadorSenha= (senha2) =>{
     //Valores que devem existir na senha, não precisa ser todos  
        const regex = 
           /^(?=.+[a-z])(?=.+[A-Z])(?=.+[0-9])(?=.+[\$\%\^\&\!@\#\*\(\)\+\=`~\?\>\<])/ 
-       return regex.test(senha) && senha.lenght >= 8
+          return regex.test(senha2) && senha2.length >= 4;
    }
    
    //verificador de texto (para os inputs que deveriam conter apenas texto)
@@ -79,5 +79,18 @@ login_idoso_input.addEventListener("input", () =>{
     errorUpdate(login_idoso_input, erro_idoso_login)
     //checador de vazio
     vazioUpdate(login_idoso_input, vazio_idoso_login, erro_idoso_login)
+    }
+})
+
+login_Senha_input.addEventListener("input", () =>{
+    if (verificadorSenha(login_Senha_input.value)){
+        //se a verificação retornar verdadeiro
+        error_senha.classList.add("esconda")
+        validInput( login_Senha_input)
+    } else {
+    //para falso
+    errorUpdate(login_Senha_input, error_senha)
+    //checador de vazio
+    vazioUpdate(login_Senha_input, vazio_senha, error_senha)
     }
 })

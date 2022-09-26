@@ -18,7 +18,7 @@ let vazio_email = document.getElementById("Email-vazio")
 
 //Telefone do tutor
 
-let telefone_input = document.getComputedStyle("telefone")
+let telefone_input = document.getElementById("telefone")
 let error_telefone = document.getElementById("Error-telefone")
 let vazio_telefone = document.getElementById("telefone-vazio")
 
@@ -55,14 +55,14 @@ const verificadorSenha= (senha) =>{
 //verificador de texto (para os inputs que deveriam conter apenas texto)
 
 const verificadorTexto = (text) =>{
-    const regex = /^[0-9]{10}$/
+    const regex = /^[a-zA-Z]{3,}$/
     return regex.test(text)
 } 
 
 //Verificador do telefone
 
 const verificadorTelefone = (number) => {
-    const regex = /^[0-9]{10}$/
+    const regex = /^[0-9]{8}$/
     return regex.test(number)
 }
 
@@ -79,7 +79,7 @@ const vazioUpdate = (
     inputReference,
     emptyErrorReference,
     otherErrorReference
-    )=>{
+    ) => {
         if (!inputReference.value){
             //input está vazio/null
             emptyErrorReference.classList.remove("esconda")
@@ -92,8 +92,31 @@ const vazioUpdate = (
     }
 
 // para o estilo e a aparição da menssagem de erro
+
 const errorUpdate = (inputReference, errorReference) => {
     errorReference.classList.remove("esconda")
     inputReference.classList.remove("valid")
     inputReference.classList.add("Error")
 }
+
+// para nenhum erros
+
+const validInput = (inputReference) => {
+    inputReference.classList.remove("Error")
+    inputReference.classList.add("valid")
+}
+
+//nome tutor
+
+tutor_nome_input.addEventListener("input", () =>{
+    if (verificadorTexto(tutor_nome_input.value)){
+        //se a verificação retornar verdadeiro
+        error_tutor.classList.add("esconda")
+        validInput(tutor_nome_input)
+    } else {
+    //para falso
+    errorUpdate(tutor_nome_input, error_tutor)
+    //checador de vazio
+    vazioUpdate(tutor_nome_input, vazio_tutor, error_tutor)
+    }
+})

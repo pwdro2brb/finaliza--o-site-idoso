@@ -91,7 +91,7 @@ img{
   .secao-input{
     margin: 0.5em 0;
   }
-  label, .menssagem-erro{
+  label, .menssagem-Error{
     display: block;
     font-size: 1em;
   }
@@ -99,7 +99,7 @@ img{
     margin-bottom: 0.5em;
     font-weight: 500;
   }
-  .menssagem-erro{
+  .menssagem-Error{
     margin-top: 0.2em;
   }
   input{
@@ -116,7 +116,7 @@ img{
   .required-color{
     color: #ff4747;
   }
-  .erro{
+  .Error{
     border-color: #ff4747;
   }
   .valid{

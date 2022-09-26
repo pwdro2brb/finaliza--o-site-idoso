@@ -72,3 +72,28 @@ const verificadorEmail = (input) => {
     const regex = /^[a-z0-9_]+@[a-z]{3,}\.[a-z\.]{3,}$/
     return regex.test(input)
 }
+
+//Para os inputs vazios - accepts(input vazio, erro para aquele input e outros erros)
+
+const vazioUpdate = (
+    inputReference,
+    emptyErrorReference,
+    otherErrorReference
+    )=>{
+        if (!inputReference.value){
+            //input está vazio/null
+            emptyErrorReference.classList.remove("esconda")
+            otherErrorReference.classList.add("esconda")
+            inputReference.classList.add("Error")
+        } else {
+            //input tem algum conteúdo
+            emptyErrorReference.classList.add("esconda")
+        }
+    }
+
+// para o estilo e a aparição da menssagem de erro
+const errorUpdate = (inputReference, errorReference) => {
+    errorReference.classList.remove("esconda")
+    inputReference.classList.remove("valid")
+    inputReference.classList.add("Error")
+}

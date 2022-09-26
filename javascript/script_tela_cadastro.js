@@ -34,13 +34,15 @@ let confimar_senha_input = document.getElementById("verificar-senha")
 let error_confirmar_senha = document.getElementById("Error-verificar-senha")
 let vazio_confirmar_senha = document.getElementById("verificar-senha-vazio")
 
+
 //Botão enviar cadastro
 
 let cadastrar_botao = document.getElementById("botao-cadastrar")
 
+
 //validador 
 
-let classesValidas = document.getElementById("valido")
+let classesValidas = document.getElementById("valid")
 let classesInvalidas = document.getElementById("Error")
 
 //verificador de senha
@@ -120,3 +122,17 @@ tutor_nome_input.addEventListener("input", () =>{
     vazioUpdate(tutor_nome_input, vazio_tutor, error_tutor)
     }
 })
+
+idoso_nome_input.addEventListener("input", () =>{
+    if (verificadorTexto(idoso_nome_input.value)){
+        //se a verificação retornar verdadeiro
+        error_idoso.classList.add("esconda")
+        validInput(idoso_nome_input)
+    } else {
+    //para falso
+    errorUpdate(idoso_nome_input, error_idoso)
+    //checador de vazio
+    vazioUpdate(idoso_nome_input, vazio_idoso, error_idoso)
+    }
+})
+

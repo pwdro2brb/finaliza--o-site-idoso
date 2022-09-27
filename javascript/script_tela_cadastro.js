@@ -42,15 +42,31 @@ let cadastrar_botao = document.getElementById("botao-cadastrar")
 
 //validador 
 
-let classesValidas = document.getElementById("valid")
-let classesInvalidas = document.getElementById("Error")
+let classesValidas1 = false
+let classesInvalidas1 = true
+
+let classesValidas2 = false
+let classesInvalidas2 = true
+
+let classesValidas3 = false
+let classesInvalidas3 = true
+
+let classesValidas4 = false
+let classesInvalidas4 = true
+
+let classesValidas5 = false
+let classesInvalidas5 = true
+
+let classesValidas6 = false
+let classesInvalidas6 = true
+
 
 //verificador de senha
 
 const verificadorSenha= (senha) =>{
  //Valores que devem existir na senha, não precisa ser todos  
     const regex = 
-       /^(?=.+[a-z])(?=.+[A-Z])(?=.+[0-9])(?=.+[\$\%\^\&\!@\#\*\(\)\+\=`~\?\>\<])/ 
+     /^(?=.+[a-z])(?=.+[A-Z])(?=.+[0-9])(?=.+[\$\%\^\&\!@\#\*\(\)\+\=`~\?\>\<])/;
        return regex.test(senha) && senha.length >= 4;
 }
 
@@ -115,6 +131,8 @@ tutor_nome_input.addEventListener("input", () =>{
         //se a verificação retornar verdadeiro
         error_tutor.classList.add("esconda")
         validInput(tutor_nome_input)
+        classesValidas1 = true
+        classesInvalidas1 = false
     } else {
     //para falso
     errorUpdate(tutor_nome_input, error_tutor)
@@ -123,11 +141,15 @@ tutor_nome_input.addEventListener("input", () =>{
     }
 })
 
+//nome idoso
+
 idoso_nome_input.addEventListener("input", () =>{
     if (verificadorTexto(idoso_nome_input.value)){
         //se a verificação retornar verdadeiro
         error_idoso.classList.add("esconda")
         validInput(idoso_nome_input)
+        classesValidas2 = true
+        classesInvalidas2 = false
     } else {
     //para falso
     errorUpdate(idoso_nome_input, error_idoso)
@@ -136,11 +158,15 @@ idoso_nome_input.addEventListener("input", () =>{
     }
 })
 
+//email
+
 email_input.addEventListener("input", () =>{
     if (verificadorEmail(email_input.value)){
         //se a verificação retornar verdadeiro
         error_email.classList.add("esconda")
         validInput(email_input)
+        classesValidas3 = true
+        classesInvalidas3 = false
     } else {
     //para falso
     errorUpdate(email_input, error_email)
@@ -149,11 +175,15 @@ email_input.addEventListener("input", () =>{
     }
 })
 
+//telefone
+
 telefone_input.addEventListener("input", () =>{
     if (verificadorTelefone(telefone_input.value)){
         //se a verificação retornar verdadeiro
         error_telefone.classList.add("esconda")
         validInput(telefone_input)
+        classesValidas4 = true
+        classesInvalidas4 = false
     } else {
     //para falso
     errorUpdate(telefone_input, error_telefone)
@@ -162,11 +192,15 @@ telefone_input.addEventListener("input", () =>{
     }
 })
 
+//senha
+
 senha_input.addEventListener("input", () =>{
     if (verificadorSenha(senha_input.value)){
         //se a verificação retornar verdadeiro
         error_senha.classList.add("esconda")
         validInput( senha_input)
+        classesValidas5 = true
+        classesInvalidas5 = false
     } else {
     //para falso
     errorUpdate(senha_input, error_senha)
@@ -175,3 +209,25 @@ senha_input.addEventListener("input", () =>{
     }
 })
 
+//confirmar senha
+
+confimar_senha_input.addEventListener("input", () =>{
+    if (confimar_senha_input.value === senha_input.value){
+        error_confirmar_senha.classList.add("esconda")
+        validInput(confimar_senha_input)
+        classesValidas6 = true
+        classesInvalidas6 = false
+    } else {
+        errorUpdate(confimar_senha_input, error_confirmar_senha)
+        vazioUpdate(senha_input, vazio_confirmar_senha, error_confirmar_senha)
+    }
+})
+
+ cadastrar_botao.addEventListener("click", () => {
+    if (classesValidas1 == true && classesInvalidas1 == false && classesValidas2 == true && classesInvalidas2 == false && classesValidas3 == true && classesInvalidas3 == false && classesValidas4 == true && classesInvalidas4 == false && classesValidas5 == true && classesInvalidas5 == false && classesValidas6 == true && classesInvalidas6 == false){
+        alert("Cadastro concluido com êxito")
+        window.location.href ='./login.html'
+    } else {
+        alert("Cadastro imconpleto, preencha o formulário corretamente")
+    }
+ })

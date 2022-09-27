@@ -16,8 +16,11 @@ let logar_botao = document.getElementById("botao-logar")
 
 //validador 
 
-let classesValidas = document.getElementById("valid")
-let classesInvalidas = document.getElementById("Error")
+let classesValidas1 = false
+let classesInvalidas1 = true
+
+let classesValidas2 = false
+let classesInvalidas2 = true
 
 //verificador de senha
 
@@ -68,12 +71,15 @@ const validInput = (inputReference) => {
     inputReference.classList.add("valid")
 }
 
+//Nome do idoso para login
 
 login_idoso_input.addEventListener("input", () =>{
     if (verificadorTexto(login_idoso_input.value)){
         //se a verificação retornar verdadeiro
         erro_idoso_login.classList.add("esconda")
         validInput(login_idoso_input)
+         classesValidas1 = true
+         classesInvalidas1 = false
     } else {
     //para falso
     errorUpdate(login_idoso_input, erro_idoso_login)
@@ -82,11 +88,15 @@ login_idoso_input.addEventListener("input", () =>{
     }
 })
 
+//senha para login
+
 login_Senha_input.addEventListener("input", () =>{
     if (verificadorSenha(login_Senha_input.value)){
         //se a verificação retornar verdadeiro
         error_senha.classList.add("esconda")
         validInput( login_Senha_input)
+        classesValidas2 = true
+        classesInvalidas2 = false
     } else {
     //para falso
     errorUpdate(login_Senha_input, error_senha)
@@ -94,3 +104,11 @@ login_Senha_input.addEventListener("input", () =>{
     vazioUpdate(login_Senha_input, vazio_senha, error_senha)
     }
 })
+
+logar_botao.addEventListener("click", () => {
+    if (classesValidas1 == true && classesInvalidas1 == false && classesValidas2 == true && classesInvalidas2 == false){
+        window.location.href ='../tela_inicial.html'
+    }else{
+        alert("Login incompleto, preencha o formulário corretamente")
+    }
+ })

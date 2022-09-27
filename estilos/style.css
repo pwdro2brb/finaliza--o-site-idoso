@@ -37,7 +37,7 @@
     padding:60px;
     width:min-content;
     display: inline-grid;
-    background-color:#00eeffff;
+    background-color:#ced6ff;
         justify-content: space-around;
         justify-items: center;
         margin-top: 10vw;
@@ -188,26 +188,14 @@
     flex-wrap: nowrap;
     flex-direction: column;
 }
-  #form{
-      height: 100%;
-      padding: 2vw;
-      position: relative;
-      border-radius: 10px;
-      justify-content: center;
-      align-items: baseline;
-      background-color: #53bfed;
-      align-content: center;
-      justify-items: self-end;
-  }
+
   #for {
     padding-top: 100px;
-    /* left: 50%; */
-    /* top: 50%; */
     border-radius: 10px;
     padding: 60px;
     width: min-content;
     display: flex;
-    background-color: #00eeffff;
+    background-color: #ced6ff;
     justify-content: space-evenly;
     justify-items: center;
     margin-top: 10vw;

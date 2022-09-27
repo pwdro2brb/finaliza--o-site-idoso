@@ -1,3 +1,7 @@
+//variável para ocultar e mostra senha
+
+var state = false
+
 //Nome do idoso no login
 
 let login_idoso_input = document.getElementById("login-idoso")
@@ -105,6 +109,8 @@ login_Senha_input.addEventListener("input", () =>{
     }
 })
 
+//botão de login
+
 logar_botao.addEventListener("click", () => {
     if (classesValidas1 == true && classesInvalidas1 == false && classesValidas2 == true && classesInvalidas2 == false){
         window.location.href ='../tela_inicial.html'
@@ -112,3 +118,15 @@ logar_botao.addEventListener("click", () => {
         alert("Login incompleto, preencha o formulário corretamente")
     }
  })
+
+//Função para mostrar a senha ao apertar no olho e parar de mostrar se apertar de novo
+
+ function mudar3(){
+    if(state){
+        document.getElementById("senha2").setAttribute("type","password")
+        state = false
+    } else {
+        document.getElementById("senha2").setAttribute("type", "text")
+        state = true
+    }
+ }

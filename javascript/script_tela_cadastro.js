@@ -1,3 +1,7 @@
+//variável para ocultar e mostra senha
+
+var state = false
+
 //Nome do tutor
 
 let tutor_nome_input = document.getElementById("input-nome-tutor")
@@ -223,6 +227,8 @@ confimar_senha_input.addEventListener("input", () =>{
     }
 })
 
+//Botão cadastrar
+
  cadastrar_botao.addEventListener("click", () => {
     if (classesValidas1 == true && classesInvalidas1 == false && classesValidas2 == true && classesInvalidas2 == false && classesValidas3 == true && classesInvalidas3 == false && classesValidas4 == true && classesInvalidas4 == false && classesValidas5 == true && classesInvalidas5 == false && classesValidas6 == true && classesInvalidas6 == false){
         alert("Cadastro concluido com êxito")
@@ -231,3 +237,27 @@ confimar_senha_input.addEventListener("input", () =>{
         alert("Cadastro imconpleto, preencha o formulário corretamente")
     }
  })
+
+//Função para mostrar a senha ao apertar no olho e parar de mostrar se apertar de novo
+
+ function mudar1(){
+    if(state){
+        document.getElementById("senha").setAttribute("type","password")
+        state = false
+    } else {
+        document.getElementById("senha").setAttribute("type", "text")
+        state = true
+    }
+ }
+
+//Função para mostrar a senha ao apertar no olho e parar de mostrar se apertar de novo
+
+  function mudar2(){
+    if(state){
+        document.getElementById("verificar-senha").setAttribute("type","password")
+        state = false
+    } else {
+        document.getElementById("verificar-senha").setAttribute("type", "text")
+        state = true
+    }
+ }

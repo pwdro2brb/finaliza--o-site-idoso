@@ -87,11 +87,16 @@ img{
 
   .secao-input{
     margin: 0.5em 0;
+    transform: translate(-0%,-0%);
+    top: 50%;
+    left: 50%;
   }
+
   label, .menssagem-Error{
     display: block;
     font-size: 1em;
   }
+  
   label{
     margin-bottom: 0.5em;
     font-weight: 500;
@@ -126,6 +131,24 @@ img{
   .esconda{
     display: none;
   }
+
+#olhos{
+  position: absolute;
+  right: 15px;
+  transform: translate(0%, -140%);
+  /* top: 70%; */
+  cursor: pointer;
+}
+
+::placeholder{
+  color: #9a9a9a;
+  font-weight: 400;
+}
+
+.fa{
+  font-size: 20px;
+  color: #7a797e;
+}
   @media only screen and (max-width: 450px) {
     .container{
       font-size: 14px;

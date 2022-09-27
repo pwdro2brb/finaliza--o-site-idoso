@@ -8,6 +8,7 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link href="../estilos/estilo_telas_login_cadastro.css" rel="stylesheet" type="text/css" />
     
   </head>
@@ -69,7 +70,8 @@
         
       <div class="secao-input">
         <label> senha <span class="required-color">*</span></label>
-        <input type="password" placeholder="Digite a senha aqui" id="senha" required>
+        <input type="password" placeholder="Digite a senha aqui" id="senha" required> 
+        <span id="olhos"><i class="fa fa-eye" aria-hidden="true" id="olho1"></i></span>
         <span id="Error-senha" class="esconda required-color menssagem-Error">A senha deve ter letra maiuscula e minuscula, números, caracteres especiais e a do mínimo de 5 digitos</span>
         <span id="senha-vazia" class="esconda required-color menssagem-Error">A senha não pode estar vazia</span>
       </div>
@@ -79,6 +81,7 @@
       <div class="secao-input">
         <label>Confirmar senha <span class="required-color">*</span></label>
         <input type="password" placeholder="Confirmar senha" id="verificar-senha" required>
+        <span id="olhos"><i class="fa fa-eye" aria-hidden="true" id="olho2"></i></span>
         <span id="Error-verificar-senha" class="esconda required-color menssagem-Error">Deve ser igual a senha anterior</span>
         <span id="verificar-senha-vazio" class="esconda required-color menssagem-Error">A senha não pode ser vazia</span>
       </div>

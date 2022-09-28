@@ -35,7 +35,7 @@ body{
         text-decoration: none;
     }
 
-.container{
+.form{
     padding-top:100px;
     left:50%;
     top:50%;
@@ -49,7 +49,7 @@ body{
     margin-top: 10vw;
   }
 
-  button{
+button{
     font-family:'Poppings',sans-serif;
     background:linear-gradient(90deg,#0062ff,#0062ff,#0062ff) ;
     width: 40vw;
@@ -62,7 +62,7 @@ body{
     cursor:pointer;
   }
 
-  .logo {
+.logo {
     background-color: #00b3b0;
     height: auto;
     padding: 2vw;
@@ -82,4 +82,57 @@ body{
 .flex-space {
     display: flex;
     justify-content: space-between;
+}
+
+.container{
+    padding: 1em 0;
+}
+
+#meu-video1, #meu-video2, #meu-video3{
+    width: 100%;
+}
+
+.container-rodar{
+    top: 0;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#icon-rodar1, #icon-rodar2, #icon-rodar3{
+    display: flex;
+    flex-direction: column;
+    color: #dddddd;
+    text-align: center;
+}
+
+.esconda{
+    display: none;
+}
+
+.container-video1, .container-video2, .container-video3{
+    width: 60%;
+    /* position: absolute; */
+   /* transform: translate(-50%, -50%); */
+    left: 50%;
+    top: 50%;
+    box-shadow: 20px 30px 50px rgba(0, 0, 0, 0.2);
+}
+
+.controles{
+    /* position: absolute; */
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(35, 34, 39, 0.8);
+    transform: translate(0%, -120%);
+}
+
+.container-progresso{
+    align-items: center;
+    padding: 0 0.5em;
 }

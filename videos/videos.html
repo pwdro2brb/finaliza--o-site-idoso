@@ -17,7 +17,7 @@ rel="stylesheet"
 
 <body>
   <center>
-  <div class="form">
+<div class="form">
 
  <div class="logo"> 
 
@@ -53,6 +53,42 @@ rel="stylesheet"
           <span id="tempo-maximo1">00:00</span>
         </div>
       </div>
+      <div id="controles-video1" class="controles-video flex">
+
+
+        <!-- Inicia o vídeo -->
+      <button id="play-btn1" class="controle-btn">
+        <i class="fa-solid fa-play"></i>
+      </button>
+
+      <!--Pausa o vídeo-->
+      <button id="botaoPausar1" class="controle-btn esconda">
+        <i class="fa-solid fa-pause"></i>
+      </button>
+
+
+
+      <!-- Volume do vídeo -->
+      <div id="volume1" class="volume flex">
+        <span id="alto1">
+          <i class="fa-solid fa-volume-high"></i>
+        </span>
+        <span class="esconda" id="baixo1">
+          <i class="fa-solid fa-volume-low"></i>
+        </span>
+        <span class="esconda" id="mute1">
+          <i class="fa-solid fa-volume-xmark"></i>
+        </span>
+        <input 
+        type="range"
+        min="0"
+        max="100"
+        value="50"
+        id="alcance-volume"
+        >
+        <span id="numero-volume1">50</span>
+            </div>
+     </div>
     </div>
   </div>
 
@@ -85,6 +121,42 @@ rel="stylesheet"
         <span id="tempo-maximo2">00:00</span>
       </div>
     </div>
+    <div id="controles-video2" class="controles-video flex">
+
+
+      <!-- Inicia o vídeo -->
+    <button id="play-btn2" class="controle-btn">
+      <i class="fa-solid fa-play"></i>
+    </button>
+
+    <!--Pausa o vídeo-->
+    <button id="botaoPausar2" class="controle-btn esconda">
+      <i class="fa-solid fa-pause"></i>
+    </button>
+
+
+
+    <!-- Volume do vídeo -->
+    <div id="volume2" class="volume flex">
+      <span id="alto2">
+        <i class="fa-solid fa-volume-high"></i>
+      </span>
+      <span class="esconda" id="baixo2">
+        <i class="fa-solid fa-volume-low"></i>
+      </span>
+      <span class="esconda" id="mute2">
+        <i class="fa-solid fa-volume-xmark"></i>
+      </span>
+      <input 
+      type="range"
+      min="0"
+      max="100"
+      value="50"
+      id="alcance-volume"
+      >
+      <span id="numero-volume2">50</span>
+          </div>
+   </div>
   </div>
 </div>
 
@@ -117,25 +189,59 @@ rel="stylesheet"
         <span id="tempo-maximo3">00:00</span>
       </div>
     </div>
-  </div>
+    <div id="controles-video3" class="controles-video flex">
+
+
+        <!-- Inicia o vídeo -->
+      <button id="play-btn3" class="controle-btn">
+        <i class="fa-solid fa-play"></i>
+      </button>
+
+      <!--Pausa o vídeo-->
+      <button id="botaoPausar3" class="controle-btn esconda">
+        <i class="fa-solid fa-pause"></i>
+      </button>
+
+
+
+      <!-- Volume do vídeo -->
+      <div id="volume3" class="volume flex">
+        <span id="alto3">
+          <i class="fa-solid fa-volume-high"></i>
+        </span>
+        <span class="esconda" id="baixo3">
+          <i class="fa-solid fa-volume-low"></i>
+        </span>
+        <span class="esconda" id="mute3">
+          <i class="fa-solid fa-volume-xmark"></i>
+        </span>
+        <input 
+        type="range"
+        min="0"
+        max="100"
+        value="50"
+        id="alcance-volume"
+        >
+        <span id="numero-volume3">50</span>
+            </div>
+     </div>
+    </div>
 </div>
 
-<br><br><br>
+<br><br>
+
     <h1>Vídeos para cuidados</h1>
 
-    <br>
+<br><br>
 
 
-<br><br><br>
+      <button onclick="window.location.href ='../tela_inicial.html'" class="button">voltar</button>
 
+<br><br>
 
-      <button onclick="window.location.href ='../tela_inicial.html'">voltar</button>
+      <button onclick="window.location.href ='../cadastro_e_login/index.html'" class="button">Fazer logout </button>
 
-<br><br><br>
-
-      <button onclick="window.location.href ='../cadastro_e_login/index.html'">Fazer logout </button>
-
-<br><br><br>
+<br><br>
 
     <div>
       <a href="../SOS.html" >
@@ -146,7 +252,7 @@ rel="stylesheet"
 <script src="../javascript/vdeo.js"></script> 
 
     </center>
-  </div>
+ </div> 
 </body>
 
 </html>

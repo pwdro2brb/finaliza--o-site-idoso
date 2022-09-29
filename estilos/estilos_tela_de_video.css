@@ -129,7 +129,7 @@ body{
     right: 0;
     bottom: 0;
     background-color: rgba(35, 34, 39, 0.8);
-    transform: translate(0%, -110%);
+    transform: translate(0%, -105%);
 }
 
 .container-progresso{
@@ -178,4 +178,11 @@ body{
     height: 10px;
     border-radius: 50%;
     background-color: white;
+}
+
+.playback {
+    position: relative;
+    display: flex;
+    justify-content: left;
+    transform: translate(1183%, 0%);
 }

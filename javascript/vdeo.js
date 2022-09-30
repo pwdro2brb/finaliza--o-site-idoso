@@ -82,3 +82,13 @@ function slider1(){
     valPercent = (alcanceVolume1.value / alcanceVolume1.max) * 100;
     alcanceVolume1.style.background = `linear-gradient(to right, #2887e3 ${valPercent}%, #000000 ${valPercent}%)`
 }
+
+function slider2(){
+    valPercent = (alcanceVolume2.value / alcanceVolume2.max) * 100;
+    alcanceVolume2.style.background = `linear-gradient(to right, #2887e3 ${valPercent}%, #000000 ${valPercent}%)`
+}
+
+function slider3(){
+    valPercent = (alcanceVolume3.value / alcanceVolume3.max) * 100;
+    alcanceVolume3.style.background = `linear-gradient(to right, #2887e3 ${valPercent}%, #000000 ${valPercent}%)`
+}

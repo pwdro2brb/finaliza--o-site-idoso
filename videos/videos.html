@@ -198,6 +198,7 @@ rel="stylesheet"
       max="100"
       value="50"
       id="alcance-volume2"
+      oninput="slider2()"
       >
       <span id="numero-volume2">50</span>
           </div>
@@ -206,9 +207,9 @@ rel="stylesheet"
     <div class="playback2">
             <button id="velocidade-playback-btn2">1x</button>
             <div class="esconda opcao-playback2">
-              <button>0.5</button>
-              <button>Normal(1)</button>
-              <button>2</button>
+              <button onclick="setPlayback2(0.5)">0.5</button>
+              <button onclick="setPlayback2(1)">Normal(1)</button>
+              <button onclick="setPlayback2(2)">2</button>
             </div>
           
       
@@ -301,6 +302,7 @@ rel="stylesheet"
         max="100"
         value="50"
         id="alcance-volume3"
+        oninput="slider3()"
         >
         <span id="numero-volume3">50</span>
             </div>
@@ -311,9 +313,9 @@ rel="stylesheet"
       <button id="velocidade-playback-btn3">1x</button>
       
       <div class="esconda opcao-playback3">
-        <button>0.5</button>
-        <button>Normal(1)</button>
-        <button>2</button>
+        <button onclick="setPlayback3(0.5)">0.5</button>
+        <button onclick="setPlayback3(1)">Normal(1)</button>
+        <button onclick="setPlayback3(2)">2</button>
       </div>
     
 

@@ -1,6 +1,4 @@
-    function chamaValoresHtml1() {
-
-let containerVideo1 = document.querySelector(".container-video1")
+        let containerVideo1 = document.querySelector(".container-video1")
 let container1 = document.querySelector(".container1")
 let meuVideo1 = document.getElementById("meu-video1")
 let containerRodar1 = document.querySelector(".container-rodar1")
@@ -24,11 +22,7 @@ const playbackSpeedButton1 = document.getElementById("velocidade-playback-btn1")
 const containerPlayback1 = document.querySelector(".playback1")
 const playbackSpeedoption1 = document.querySelector(".opcao-playback1")
 
-        }
-    
-chamaValoresHtml1()
 
-    function chamaValoresHtml2() {
 
         let containerVideo2 = document.querySelector(".container-video2")
         let container2 = document.querySelector(".container2")
@@ -54,13 +48,10 @@ chamaValoresHtml1()
         const containerPlayback2 = document.querySelector(".playback2")
         const playbackSpeedoption2 = document.querySelector(".opcao-playback2")
         
-        }
+
         
-chamaValoresHtml2()
 
-    function chamaValoresHtml3() {
-
-            let containerVideo3 = document.querySelector(".container-video3")
+        let containerVideo3 = document.querySelector(".container-video3")
             let container3 = document.querySelector(".container3")
             let meuVideo3 = document.getElementById("meu-video3")
             let containerRodar3 = document.querySelector(".container-rodar3")
@@ -84,7 +75,10 @@ chamaValoresHtml2()
             const containerPlayback3 = document.querySelector(".playback3")
             const playbackSpeedoption3 = document.querySelector(".opcao-playback3")
 
-        }
-     
-chamaValoresHtml3()
 
+     
+
+function slider1(){
+    valPercent = (alcanceVolume1.value / alcanceVolume1.max) * 100;
+    alcanceVolume1.style.background = `linear-gradient(to right, #2887e3 ${valPercent}%, #000000 ${valPercent}%)`
+}

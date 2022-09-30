@@ -35,6 +35,10 @@ body{
         text-decoration: none;
     }
 
+h1{
+    color: #000000;
+}
+
 .form{
     padding-top:100px;
     left:50%;
@@ -164,7 +168,7 @@ body{
     left: 0;
     display: inline-block;
     height: 5px;
-    width: 50px;
+    width: 0;
     background: #2887e3;
     border-radius: 5px;
 }
@@ -217,7 +221,7 @@ body{
     outline: none;
 }
 
-input[type="range"]::-webkit-slider-thumb{
+input[type="range"]::-webkit-slider-thumb {
     -webkit-appearance: none;
     height: 10px;
     width: 10px;

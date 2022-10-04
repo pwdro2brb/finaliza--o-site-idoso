@@ -99,9 +99,7 @@ let event1 = {
         click: "touchstart",
     },
 }
-
 let tipoServico1 = "";
-
 const isServicoToque1 = () =>{
     try{
         //Tenta criar um evento de toque(isso vai falhar nos desktops e voltar erro)
@@ -114,4 +112,45 @@ const isServicoToque1 = () =>{
     }
 }
 
+let event2 = {
+    mouse: {
+        click: "click",
+    },
+    touch: {
+        click: "touchstart",
+    },
+}
+let tipoServico2 = "";
+const isServicoToque2 = () =>{
+    try{
+        //Tenta criar um evento de toque(isso vai falhar nos desktops e voltar erro)
+        document.createEvent("TouchEvent")
+        deviceType = "touch"
+        return true
+    } catch (e) {
+        deviceType = "mouse"
+        return false
+    }
+}
+
+let event3 = {
+    mouse: {
+        click: "click",
+    },
+    touch: {
+        click: "touchstart",
+    },
+}
+let tipoServico3 = "";
+const isServicoToque3 = () =>{
+    try{
+        //Tenta criar um evento de toque(isso vai falhar nos desktops e voltar erro)
+        document.createEvent("TouchEvent")
+        deviceType = "touch"
+        return true
+    } catch (e) {
+        deviceType = "mouse"
+        return false
+    }
+}
 

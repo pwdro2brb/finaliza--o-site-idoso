@@ -51,7 +51,7 @@ const playbackSpeedoption1 = document.querySelector(".opcao-playback1")
 
         
 
-        let containerVideo3 = document.querySelector(".container-video3")
+            let containerVideo3 = document.querySelector(".container-video3")
             let container3 = document.querySelector(".container3")
             let meuVideo3 = document.getElementById("meu-video3")
             let containerRodar3 = document.querySelector(".container-rodar3")
@@ -82,13 +82,36 @@ function slider1(){
     valPercent = (alcanceVolume1.value / alcanceVolume1.max) * 100;
     alcanceVolume1.style.background = `linear-gradient(to right, #2887e3 ${valPercent}%, #000000 ${valPercent}%)`
 }
-
 function slider2(){
     valPercent = (alcanceVolume2.value / alcanceVolume2.max) * 100;
     alcanceVolume2.style.background = `linear-gradient(to right, #2887e3 ${valPercent}%, #000000 ${valPercent}%)`
 }
-
 function slider3(){
     valPercent = (alcanceVolume3.value / alcanceVolume3.max) * 100;
     alcanceVolume3.style.background = `linear-gradient(to right, #2887e3 ${valPercent}%, #000000 ${valPercent}%)`
 }
+
+let event1 = {
+    mouse: {
+        click: "click",
+    },
+    touch: {
+        click: "touchstart",
+    },
+}
+
+let tipoServico1 = "";
+
+const isServicoToque1 = () =>{
+    try{
+        //Tenta criar um evento de toque(isso vai falhar nos desktops e voltar erro)
+        document.createEvent("TouchEvent")
+        deviceType = "touch"
+        return true
+    } catch (e) {
+        deviceType = "mouse"
+        return false
+    }
+}
+
+

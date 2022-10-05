@@ -264,3 +264,33 @@ const setPlayback1 = (value) => {
     meuVideo1.playbackRate = value
     
 }
+
+// Velocidade segundo playback
+
+const setPlayback2 = (value) => {
+    playbackSpeedButton2.innerText = value + "x"
+    if(value == 1 || value==2){
+        containerPlayback2.classList.remove("nivelar")
+        containerPlayback2.classList.add("playback1")
+    }else if(value == 0.5) {
+        containerPlayback2.classList.add("nivelar")
+        containerPlayback2.classList.remove("playback1")
+    }
+    meuVideo2.playbackRate = value
+    
+}
+
+// Velocidade terceiro playback
+
+const setPlayback3 = (value) => {
+    playbackSpeedButton3.innerText = value + "x"
+    if(value == 1 || value==2){
+        containerPlayback3.classList.remove("nivelar")
+        containerPlayback3.classList.add("playback1")
+    }else if(value == 0.5) {
+        containerPlayback3.classList.add("nivelar")
+        containerPlayback3.classList.remove("playback1")
+    }
+    meuVideo3.playbackRate = value
+    
+}

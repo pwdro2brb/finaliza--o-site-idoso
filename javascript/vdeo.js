@@ -210,12 +210,42 @@ containerPlayback1.addEventListener("click", () => {
     playbackSpeedoption1.classList.remove("esconda")
 })
 
-//Se o usuário clicar foraou dentro da opção
+//Se o usuário clicar fora ou dentro da opção
 
 window.addEventListener("click", (e) =>{
     if (!containerPlayback1.contains(e.target)) {
         playbackSpeedoption1.classList.add("esconda")
     } else if (playbackSpeedoption1.contains(e.target)) {
         playbackSpeedoption1.classList.add("esconda")
+    }
+})
+
+//Segundo playback
+containerPlayback2.addEventListener("click", () => {
+    playbackSpeedoption2.classList.remove("esconda")
+})
+
+//Se o usuário clicar fora ou dentro da opção
+
+window.addEventListener("click", (e) =>{
+    if (!containerPlayback2.contains(e.target)) {
+        playbackSpeedoption2.classList.add("esconda")
+    } else if (playbackSpeedoption2.contains(e.target)) {
+        playbackSpeedoption2.classList.add("esconda")
+    }
+})
+
+//Terceiro playback
+containerPlayback3.addEventListener("click", () => {
+    playbackSpeedoption3.classList.remove("esconda")
+})
+
+//Se o usuário clicar fora ou dentro da opção
+
+window.addEventListener("click", (e) =>{
+    if (!containerPlayback3.contains(e.target)) {
+        playbackSpeedoption3.classList.add("esconda")
+    } else if (playbackSpeedoption3.contains(e.target)) {
+        playbackSpeedoption3.classList.add("esconda")
     }
 })

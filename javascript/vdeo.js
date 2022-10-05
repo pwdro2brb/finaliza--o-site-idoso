@@ -154,8 +154,6 @@ const isServicoToque3 = () =>{
     }
 }
 
-console.log(isServicoToque1())
-
 //Botão de play(iniciar) e pausa
 
 botaoPlay1.addEventListener("click", () => {
@@ -170,5 +168,39 @@ botaoPausar1.addEventListener(
         meuVideo1.pause()
         botaoPausar1.classList.add("esconda")
         botaoPlay1.classList.remove("esconda")
+    })
+)
+
+//Botão de play(iniciar) e pausa vídeo 2
+
+botaoPlay2.addEventListener("click", () => {
+    meuVideo2.play()
+    botaoPausar2.classList.remove("esconda")
+    botaoPlay2.classList.add("esconda")
+})
+
+botaoPausar2.addEventListener(
+    "click",
+    (pausarVideo2 = () =>{
+        meuVideo2.pause()
+        botaoPausar2.classList.add("esconda")
+        botaoPlay2.classList.remove("esconda")
+    })
+)
+
+//Botão de play(iniciar) e pausa vídeo 3
+
+botaoPlay3.addEventListener("click", () => {
+    meuVideo3.play()
+    botaoPausar3.classList.remove("esconda")
+    botaoPlay3.classList.add("esconda")
+})
+
+botaoPausar3.addEventListener(
+    "click",
+    (pausarVideo3 = () =>{
+        meuVideo3.pause()
+        botaoPausar3.classList.add("esconda")
+        botaoPlay3.classList.remove("esconda")
     })
 )

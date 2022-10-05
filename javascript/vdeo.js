@@ -154,3 +154,21 @@ const isServicoToque3 = () =>{
     }
 }
 
+console.log(isServicoToque1())
+
+//Botão de play(iniciar) e pausa
+
+botaoPlay1.addEventListener("click", () => {
+    meuVideo1.play()
+    botaoPausar1.classList.remove("esconda")
+    botaoPlay1.classList.add("esconda")
+})
+
+botaoPausar1.addEventListener(
+    "click",
+    (pausarVideo1 = () =>{
+        meuVideo1.pause()
+        botaoPausar1.classList.add("esconda")
+        botaoPlay1.classList.remove("esconda")
+    })
+)

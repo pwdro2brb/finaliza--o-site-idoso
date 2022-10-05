@@ -133,7 +133,7 @@ h1{
     right: 0;
     bottom: 0;
     background-color: rgba(35, 34, 39, 0.8);
-    transform: translate(0%, -105%);
+    transform: translate(0%, -103.5%);
 }
 
 .container-progresso{
@@ -188,7 +188,7 @@ h1{
     position: relative;
     display: flex;
     justify-content: left;
-    transform: translate(529%, 0%);
+    transform: translate(363%, 0%);
 }
 
 .controle-btn, #expandir-tela1, #screen-compress1

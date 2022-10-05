@@ -204,3 +204,18 @@ botaoPausar3.addEventListener(
         botaoPlay3.classList.remove("esconda")
     })
 )
+
+//Primeiro playback
+containerPlayback1.addEventListener("click", () => {
+    playbackSpeedoption1.classList.remove("esconda")
+})
+
+//Se o usuário clicar foraou dentro da opção
+
+window.addEventListener("click", (e) =>{
+    if (!containerPlayback1.contains(e.target)) {
+        playbackSpeedoption1.classList.add("esconda")
+    } else if (playbackSpeedoption1.contains(e.target)) {
+        playbackSpeedoption1.classList.add("esconda")
+    }
+})

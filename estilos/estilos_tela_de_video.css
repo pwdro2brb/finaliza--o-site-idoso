@@ -188,7 +188,7 @@ h1{
     position: relative;
     display: flex;
     justify-content: left;
-    transform: translate(363%, 0%);
+    transform: translate(350%, 0%);
 }
 
 .controle-btn, #expandir-tela1, #screen-compress1
@@ -325,4 +325,15 @@ input[type="range"]::-webkit-slider-thumb {
     .container-video1, .container-video2, .container-video3{
         margin-top: 50%;
     }
+}
+
+#aumentar{
+    transform: translate(90%, 10%);
+}
+
+.nivelar{
+    position: relative;
+    display: flex;
+    justify-content: left;
+    transform: translate(256%, 0%); 
 }

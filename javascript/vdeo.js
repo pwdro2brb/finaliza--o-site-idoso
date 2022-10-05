@@ -249,3 +249,18 @@ window.addEventListener("click", (e) =>{
         playbackSpeedoption3.classList.add("esconda")
     }
 })
+
+// Velocidade primeiro playback
+
+const setPlayback1 = (value) => {
+    playbackSpeedButton1.innerText = value + "x"
+    if(value == 1 || value==2){
+        containerPlayback1.classList.remove("nivelar")
+        containerPlayback1.classList.add("playback1")
+    }else if(value == 0.5) {
+        containerPlayback1.classList.add("nivelar")
+        containerPlayback1.classList.remove("playback1")
+    }
+    meuVideo1.playbackRate = value
+    
+}

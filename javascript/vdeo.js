@@ -338,8 +338,8 @@ baixo3.addEventListener("click", muter3)
 
 alcanceVolume1.addEventListener("input", () => {
     //paraconverter % em valores decimais no vídeo, o volume deve ser no tipo decimal apenas
-    let valorVolume = alcanceVolume1.value / 100
-    meuVideo1.volume = valorVolume
+    let valorVolume1 = alcanceVolume1.value / 100
+    meuVideo1.volume = valorVolume1
     numeroVolume1.innerHTML = alcanceVolume1.value
     //Mostrar os icones de volume
     if(alcanceVolume1.value < 50 ) {
@@ -350,5 +350,39 @@ alcanceVolume1.addEventListener("input", () => {
         baixo1.classList.add("esconda")
         alto1.classList.remove("esconda")
         mute1.classList.add("esconda")  
+    } 
+})
+
+alcanceVolume2.addEventListener("input", () => {
+    //paraconverter % em valores decimais no vídeo, o volume deve ser no tipo decimal apenas
+    let valorVolume2 = alcanceVolume2.value / 100
+    meuVideo2.volume = valorVolume2
+    numeroVolume2.innerHTML = alcanceVolume2.value
+    //Mostrar os icones de volume
+    if(alcanceVolume2.value < 50 ) {
+        baixo2.classList.remove("esconda")
+        alto2.classList.add("esconda")
+        mute2.classList.add("esconda")
+    } else if (alcanceVolume2.value >= 50) {
+        baixo2.classList.add("esconda")
+        alto2.classList.remove("esconda")
+        mute2.classList.add("esconda")  
+    } 
+})
+
+alcanceVolume3.addEventListener("input", () => {
+    //paraconverter % em valores decimais no vídeo, o volume deve ser no tipo decimal apenas
+    let valorVolume3 = alcanceVolume3.value / 100
+    meuVideo3.volume = valorVolume3
+    numeroVolume3.innerHTML = alcanceVolume3.value
+    //Mostrar os icones de volume
+    if(alcanceVolume3.value < 50 ) {
+        baixo3.classList.remove("esconda")
+        alto3.classList.add("esconda")
+        mute3.classList.add("esconda")
+    } else if (alcanceVolume3.value >= 50) {
+        baixo3.classList.add("esconda")
+        alto3.classList.remove("esconda")
+        mute3.classList.add("esconda")  
     } 
 })

@@ -247,7 +247,7 @@ input[type="range"]::-webkit-slider-thumb {
     padding: 0.3em 0.25em;
     cursor: pointer;
     margin-inline-start: auto;
-    transform: translate(150%, 0%);
+    transform: translate(170%, 0%);
 }
 
 .opcao-playback1, .opcao-playback2, .opcao-playback3{

@@ -91,6 +91,7 @@ function slider3(){
     alcanceVolume3.style.background = `linear-gradient(to right, #2887e3 ${valPercent}%, #000000 ${valPercent}%)`
 }
 
+
 let event1 = {
     mouse: {
         click: "click",
@@ -111,6 +112,7 @@ const isServicoToque1 = () =>{
         return false
     }
 }
+
 
 let event2 = {
     mouse: {
@@ -133,6 +135,7 @@ const isServicoToque2 = () =>{
     }
 }
 
+
 let event3 = {
     mouse: {
         click: "click",
@@ -154,6 +157,7 @@ const isServicoToque3 = () =>{
     }
 }
 
+
 //Botão de play(iniciar) e pausa
 
 botaoPlay1.addEventListener("click", () => {
@@ -170,6 +174,7 @@ botaoPausar1.addEventListener(
         botaoPlay1.classList.remove("esconda")
     })
 )
+
 
 //Botão de play(iniciar) e pausa vídeo 2
 
@@ -188,6 +193,7 @@ botaoPausar2.addEventListener(
     })
 )
 
+
 //Botão de play(iniciar) e pausa vídeo 3
 
 botaoPlay3.addEventListener("click", () => {
@@ -205,6 +211,7 @@ botaoPausar3.addEventListener(
     })
 )
 
+
 //Primeiro playback
 containerPlayback1.addEventListener("click", () => {
     playbackSpeedoption1.classList.remove("esconda")
@@ -219,6 +226,7 @@ window.addEventListener("click", (e) =>{
         playbackSpeedoption1.classList.add("esconda")
     }
 })
+
 
 //Segundo playback
 containerPlayback2.addEventListener("click", () => {
@@ -235,6 +243,7 @@ window.addEventListener("click", (e) =>{
     }
 })
 
+
 //Terceiro playback
 containerPlayback3.addEventListener("click", () => {
     playbackSpeedoption3.classList.remove("esconda")
@@ -249,6 +258,7 @@ window.addEventListener("click", (e) =>{
         playbackSpeedoption3.classList.add("esconda")
     }
 })
+
 
 // Velocidade primeiro playback
 
@@ -265,6 +275,7 @@ const setPlayback1 = (value) => {
     
 }
 
+
 // Velocidade segundo playback
 
 const setPlayback2 = (value) => {
@@ -279,6 +290,7 @@ const setPlayback2 = (value) => {
     meuVideo2.playbackRate = value
     
 }
+
 
 // Velocidade terceiro playback
 
@@ -311,3 +323,33 @@ const muter1 = () =>{
 
 alto1.addEventListener("click", muter1)
 baixo1.addEventListener("click", muter1)
+
+
+//mutar vídeo 2
+
+const muter2 = () =>{
+    mute2.classList.remove("esconda")
+    alto2.classList.add("esconda")
+    baixo2.classList.add("esconda")
+    meuVideo2.volume = 0
+    numeroVolume2.innerHTML = 0
+    alcanceVolume2.value = 0
+}
+
+alto2.addEventListener("click", muter2)
+baixo2.addEventListener("click", muter2)
+
+
+// mutar vídeo 3
+
+const muter3 = () =>{
+    mute3.classList.remove("esconda")
+    alto3.classList.add("esconda")
+    baixo3.classList.add("esconda")
+    meuVideo3.volume = 0
+    numeroVolume3.innerHTML = 0
+    alcanceVolume3.value = 0
+}
+
+alto3.addEventListener("click", muter3)
+baixo3.addEventListener("click", muter3)

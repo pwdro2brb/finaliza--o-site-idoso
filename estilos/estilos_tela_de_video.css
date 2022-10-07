@@ -144,6 +144,8 @@ h1{
 .controles-video{
     flex-direction: row;
     align-items: center;
+    place-items: stretch;
+    place-content: space-evenly;
 }
 
 #barra-progresso2, #barra-progresso1, #barra-progresso3{
@@ -186,7 +188,7 @@ h1{
 
 .playback1, .playback2, .playback3 {
     position: relative;
-    display: flex;
+    display: contents;
     justify-content: left;
     transform: translate(350%, 0%);
 }
@@ -244,7 +246,8 @@ input[type="range"]::-webkit-slider-thumb {
     border-radius: 5px;
     padding: 0.3em 0.25em;
     cursor: pointer;
-    transform: translate(-10%, -5%);
+    margin-inline-start: auto;
+    transform: translate(150%, 0%);
 }
 
 .opcao-playback1, .opcao-playback2, .opcao-playback3{
@@ -254,7 +257,7 @@ input[type="range"]::-webkit-slider-thumb {
     min-width: 5em;
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
     z-index: 1;
-    transform: translate(-4%, 0%)
+    transform: translate(200%, 0%);
 }
 
 .opcao-playback1 button, .opcao-playback2 button, .opcao-playback3 button{

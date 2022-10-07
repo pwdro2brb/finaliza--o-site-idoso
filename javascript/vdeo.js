@@ -264,13 +264,6 @@ window.addEventListener("click", (e) =>{
 
 const setPlayback1 = (value) => {
     playbackSpeedButton1.innerText = value + "x"
-    if(value == 1 || value==2){
-        containerPlayback1.classList.remove("nivelar")
-        containerPlayback1.classList.add("playback1")
-    }else if(value == 0.5) {
-        containerPlayback1.classList.add("nivelar")
-        containerPlayback1.classList.remove("playback1")
-    }
     meuVideo1.playbackRate = value
     
 }
@@ -280,13 +273,6 @@ const setPlayback1 = (value) => {
 
 const setPlayback2 = (value) => {
     playbackSpeedButton2.innerText = value + "x"
-    if(value == 1 || value==2){
-        containerPlayback2.classList.remove("nivelar")
-        containerPlayback2.classList.add("playback1")
-    }else if(value == 0.5) {
-        containerPlayback2.classList.add("nivelar")
-        containerPlayback2.classList.remove("playback1")
-    }
     meuVideo2.playbackRate = value
     
 }
@@ -296,13 +282,6 @@ const setPlayback2 = (value) => {
 
 const setPlayback3 = (value) => {
     playbackSpeedButton3.innerText = value + "x"
-    if(value == 1 || value==2){
-        containerPlayback3.classList.remove("nivelar")
-        containerPlayback3.classList.add("playback1")
-    }else if(value == 0.5) {
-        containerPlayback3.classList.add("nivelar")
-        containerPlayback3.classList.remove("playback1")
-    }
     meuVideo3.playbackRate = value
     
 }
@@ -353,3 +332,23 @@ const muter3 = () =>{
 
 alto3.addEventListener("click", muter3)
 baixo3.addEventListener("click", muter3)
+
+
+//para o volume
+
+alcanceVolume1.addEventListener("input", () => {
+    //paraconverter % em valores decimais no vídeo, o volume deve ser no tipo decimal apenas
+    let valorVolume = alcanceVolume1.value / 100
+    meuVideo1.volume = valorVolume
+    numeroVolume1.innerHTML = alcanceVolume1.value
+    //Mostrar os icones de volume
+    if(alcanceVolume1.value < 50 ) {
+        baixo1.classList.remove("esconda")
+        alto1.classList.add("esconda")
+        mute1.classList.add("esconda")
+    } else if (alcanceVolume1.value >= 50) {
+        baixo1.classList.add("esconda")
+        alto1.classList.remove("esconda")
+        mute1.classList.add("esconda")  
+    } 
+})

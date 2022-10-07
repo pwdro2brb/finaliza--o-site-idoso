@@ -294,3 +294,20 @@ const setPlayback3 = (value) => {
     meuVideo3.playbackRate = value
     
 }
+
+
+//mutar vídeo
+
+const muter1 = () =>{
+    mute1.classList.remove("esconda")
+    alto1.classList.add("esconda")
+    baixo1.classList.add("esconda")
+    meuVideo1.volume = 0
+    numeroVolume1.innerHTML = 0
+    alcanceVolume1.value = 0
+}
+
+//Quando o usuário apertar para mutar quando estivir no volume alto ou baixo
+
+alto1.addEventListener("click", muter1)
+baixo1.addEventListener("click", muter1)

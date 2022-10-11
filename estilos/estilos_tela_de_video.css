@@ -124,7 +124,7 @@ h1{
    /* transform: translate(-50%, -50%); */
     left: 50%;
     top: 50%;
-    box-shadow: 20px 30px 50px rgba(0, 0, 0, 0.2);
+  /*  box-shadow: 20px 30px 50px rgba(0, 0, 0, 0.2);*/
 }
 
 .controles1, .controles2, .controles3{
@@ -145,7 +145,7 @@ h1{
     flex-direction: row;
     align-items: center;
     place-items: stretch;
-    place-content: space-evenly;
+    place-content: space-between;
 }
 
 #barra-progresso2, #barra-progresso1, #barra-progresso3{
@@ -188,9 +188,9 @@ h1{
 
 .playback1, .playback2, .playback3 {
     position: relative;
-    display: contents;
+    display: flex;
     justify-content: left;
-    transform: translate(350%, 0%);
+    /* transform: translate(350%, 0%);*/
 }
 
 .controle-btn, #expandir-tela1, #screen-compress1
@@ -247,7 +247,6 @@ input[type="range"]::-webkit-slider-thumb {
     padding: 0.3em 0.25em;
     cursor: pointer;
     margin-inline-start: auto;
-    transform: translate(170%, -5%);
 }
 
 .opcao-playback1, .opcao-playback2, .opcao-playback3{
@@ -257,7 +256,7 @@ input[type="range"]::-webkit-slider-thumb {
     min-width: 5em;
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
     z-index: 1;
-    transform: translate(200%, 0%);
+    transform: translate(-40%, 0%);
 }
 
 .opcao-playback1 button, .opcao-playback2 button, .opcao-playback3 button{
@@ -298,7 +297,16 @@ input[type="range"]::-webkit-slider-thumb {
         color: white;
     }
     #velocidade-playback-btn1, #velocidade-playback-btn2, #velocidade-playback-btn3 {
-        display: block;
+    position: relative;
+    background-color: transparent;
+    border: 1px solid white;
+    color: white;
+    font-size: 0.9rem;
+    border-radius: 5px;
+    padding: 0.3em 0.25em;
+    cursor: pointer;
+    margin-inline-start: auto;
+    transform: translate(0%, 0%);
     }
     .opcao-playback1, .opcao-playback2, .opcao-playback3{
         position: absolute; 
@@ -307,19 +315,19 @@ input[type="range"]::-webkit-slider-thumb {
         min-width: 5em;
         box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
         z-index: 1;
-        transform: translate(220%, 0%);
+        transform: translate(-45%, 0%);
     }
     .playback1, .playback2, .playback3 {
         position: relative;
-        display: contents;
+        display: block;
         justify-content: left;
-        transform: translate(350%, 0%);
+        transform: translate(0%, 0%);
     }
     .controles-video {
         flex-direction: row;
         align-items: center;
         place-items: stretch;
-        /* place-content: space-evenly; */
+       place-content: space-between; 
     }
 }
 
@@ -363,4 +371,8 @@ input[type="range"]::-webkit-slider-thumb {
     display: flex;
     justify-content: left;
     transform: translate(256%, 0%); 
+}
+
+.i, #i{
+    display:flex;
 }

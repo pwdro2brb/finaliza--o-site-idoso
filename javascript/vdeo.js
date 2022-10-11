@@ -386,3 +386,26 @@ alcanceVolume3.addEventListener("input", () => {
         mute3.classList.add("esconda")  
     } 
 })
+
+
+//tamanho do vídeo
+
+expandirTela1.addEventListener("click", () => {
+    screenCompress1.classList.remove("esconda")
+    tamanhoTela1.classList.add("esconda")
+    containerVideo1
+      .requestFullscreen()
+      .catch((err) => alert("Seu dispositivo não suporta API's de tela cheia"))
+    if (isServicoToque1) {
+        let screenOrientation =
+         screen.orientation || screen.mozOrientation || screen.msOrientation
+        if (screenOrientation.type == "portrait-primary") {
+            //atualizando estilo para tela cheia
+            pausarVideo1()
+            containerRodar1.classList.remove("esconda")
+            const meuTempoAcabou = setTimeout(() => {
+                containerRodar1.classList.add("esconda")
+            }, 3000)
+        }
+    }
+})

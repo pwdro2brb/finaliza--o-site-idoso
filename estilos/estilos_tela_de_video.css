@@ -329,6 +329,12 @@ input[type="range"]::-webkit-slider-thumb {
         place-items: stretch;
        place-content: space-between; 
     }
+    #meu-video3 {
+        width: 75%;
+    }
+    #meu-video2{
+        width: 84.5%; 
+    }
 }
 
 @media only screen and(max-width: 768px) {

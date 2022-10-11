@@ -409,3 +409,43 @@ expandirTela1.addEventListener("click", () => {
         }
     }
 })
+
+expandirTela2.addEventListener("click", () => {
+    screenCompress2.classList.remove("esconda")
+    tamanhoTela2.classList.add("esconda")
+    containerVideo2
+      .requestFullscreen()
+      .catch((err) => alert("Seu dispositivo não suporta API's de tela cheia"))
+    if (isServicoToque2) {
+        let screenOrientation =
+         screen.orientation || screen.mozOrientation || screen.msOrientation
+        if (screenOrientation.type == "portrait-primary") {
+            //atualizando estilo para tela cheia
+            pausarVideo2()
+            containerRodar2.classList.remove("esconda")
+            const meuTempoAcabou = setTimeout(() => {
+                containerRodar2.classList.add("esconda")
+            }, 3000)
+        }
+    }
+})
+
+expandirTela3.addEventListener("click", () => {
+    screenCompress3.classList.remove("esconda")
+    tamanhoTela3.classList.add("esconda")
+    containerVideo3
+      .requestFullscreen()
+      .catch((err) => alert("Seu dispositivo não suporta API's de tela cheia"))
+    if (isServicoToque3) {
+        let screenOrientation =
+         screen.orientation || screen.mozOrientation || screen.msOrientation
+        if (screenOrientation.type == "portrait-primary") {
+            //atualizando estilo para tela cheia
+            pausarVideo3()
+            containerRodar3.classList.remove("esconda")
+            const meuTempoAcabou = setTimeout(() => {
+                containerRodar3.classList.add("esconda")
+            }, 3000)
+        }
+    }
+})

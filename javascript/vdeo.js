@@ -580,3 +580,21 @@ meuVideo2.addEventListener("timeupdate", () => {
 meuVideo3.addEventListener("timeupdate", () => {
     referenciaTempoAtual3.innerHTML = formatadorDoTempo1(meuVideo3.currentTime)
 })
+
+//se o usuário clicar na barra de progresso
+isServicoToque1()
+barraProgresso1.addEventListener(event1[deviceType].click, (event1)=>{
+    //começo da barra de progresso
+    let coordStart = barraProgresso1.getBoundingClientRect().left
+    //posição de click do mouse
+    let coordEnd = !isServicoToque1() ? event1.clientX : event1.touches[0].clientX;
+    let progresso = (coordEnd - coordStart) / barraProgresso1.offsetWidth
+    //determinar o tamanho do a barra do vídeo vídeo
+    progressoAtual1.style.width = progresso * 100 + "%"
+    //mostrar tempo
+    meuVideo1.currentTime = progresso * meuVideo1.duration
+    //play
+    meuVideo1.play()
+    botaoPausar1.classList.remove("esconda")
+    botaoPlay1.classList.add("esconda")
+})

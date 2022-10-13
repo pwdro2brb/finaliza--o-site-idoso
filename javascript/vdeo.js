@@ -582,6 +582,7 @@ meuVideo3.addEventListener("timeupdate", () => {
 })
 
 //se o usuário clicar na barra de progresso
+
 isServicoToque1()
 barraProgresso1.addEventListener(event1[deviceType].click, (event1)=>{
     //começo da barra de progresso
@@ -597,4 +598,38 @@ barraProgresso1.addEventListener(event1[deviceType].click, (event1)=>{
     meuVideo1.play()
     botaoPausar1.classList.remove("esconda")
     botaoPlay1.classList.add("esconda")
+})
+
+isServicoToque2()
+barraProgresso2.addEventListener(event2[deviceType].click, (event2)=>{
+    //começo da barra de progresso
+    let coordStart = barraProgresso2.getBoundingClientRect().left
+    //posição de click do mouse
+    let coordEnd = !isServicoToque2() ? event2.clientX : event2.touches[0].clientX;
+    let progresso = (coordEnd - coordStart) / barraProgresso2.offsetWidth
+    //determinar o tamanho do a barra do vídeo vídeo
+    progressoAtual2.style.width = progresso * 100 + "%"
+    //mostrar tempo
+    meuVideo2.currentTime = progresso * meuVideo2.duration
+    //play
+    meuVideo2.play()
+    botaoPausar2.classList.remove("esconda")
+    botaoPlay2.classList.add("esconda")
+})
+
+isServicoToque3()
+barraProgresso3.addEventListener(event3[deviceType].click, (event3)=>{
+    //começo da barra de progresso
+    let coordStart = barraProgresso3.getBoundingClientRect().left
+    //posição de click do mouse
+    let coordEnd = !isServicoToque3() ? event3.clientX : event3.touches[0].clientX;
+    let progresso = (coordEnd - coordStart) / barraProgresso3.offsetWidth
+    //determinar o tamanho do a barra do vídeo vídeo
+    progressoAtual3.style.width = progresso * 100 + "%"
+    //mostrar tempo
+    meuVideo3.currentTime = progresso * meuVideo3.duration
+    //play
+    meuVideo3.play()
+    botaoPausar3.classList.remove("esconda")
+    botaoPlay3.classList.add("esconda")
 })

@@ -205,6 +205,7 @@ h1{
 
 #tamanho-tela1, #tamanho-tela2, #tamanho-tela3{
     margin-left: auto;
+    display: contents;
 }
 
 .volume{

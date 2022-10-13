@@ -213,7 +213,7 @@ botaoPausar3.addEventListener(
 
 
 //Primeiro playback
-containerPlayback1.addEventListener("click", () => {
+playbackSpeedButton1.addEventListener("click", () => {
     playbackSpeedoption1.classList.remove("esconda")
 })
 
@@ -229,7 +229,7 @@ window.addEventListener("click", (e) =>{
 
 
 //Segundo playback
-containerPlayback2.addEventListener("click", () => {
+playbackSpeedButton2.addEventListener("click", () => {
     playbackSpeedoption2.classList.remove("esconda")
 })
 
@@ -245,7 +245,7 @@ window.addEventListener("click", (e) =>{
 
 
 //Terceiro playback
-containerPlayback3.addEventListener("click", () => {
+playbackSpeedButton3.addEventListener("click", () => {
     playbackSpeedoption3.classList.remove("esconda")
 })
 
@@ -392,7 +392,7 @@ alcanceVolume3.addEventListener("input", () => {
 
 expandirTela1.addEventListener("click", () => {
     screenCompress1.classList.remove("esconda")
-    tamanhoTela1.classList.add("esconda")
+    expandirTela1.classList.add("esconda")
     containerVideo1
       .requestFullscreen()
       .catch((err) => alert("Seu dispositivo não suporta API's de tela cheia"))
@@ -412,7 +412,7 @@ expandirTela1.addEventListener("click", () => {
 
 expandirTela2.addEventListener("click", () => {
     screenCompress2.classList.remove("esconda")
-    tamanhoTela2.classList.add("esconda")
+    expandirTela2.classList.add("esconda")
     containerVideo2
       .requestFullscreen()
       .catch((err) => alert("Seu dispositivo não suporta API's de tela cheia"))
@@ -432,7 +432,7 @@ expandirTela2.addEventListener("click", () => {
 
 expandirTela3.addEventListener("click", () => {
     screenCompress3.classList.remove("esconda")
-    tamanhoTela3.classList.add("esconda")
+    expandirTela3.classList.add("esconda")
     containerVideo3
       .requestFullscreen()
       .catch((err) => alert("Seu dispositivo não suporta API's de tela cheia"))
@@ -449,3 +449,42 @@ expandirTela3.addEventListener("click", () => {
         }
     }
 })
+
+
+//se o usuário sair do browser após do evento da tela cheia
+
+document.addEventListener("fullscreenchange", exitHandler);
+document.addEventListener("webkitfullscreenchange", exitHandler);
+document.addEventListener("mozfullscreenchange", exitHandler);
+document.addEventListener("MSFullscreenchange", exitHandler);
+
+function exitHandler() {
+  //se a tela cheia estiver fechada
+  if (
+    !document.fullscreenElement &&
+    !document.webkitIsFullScreen &&
+    !document.mozFullScreen &&
+    !document.msFullscreenElement
+  ) {
+    normalScreen();
+  }
+}
+
+//volta a tela normal
+
+screenCompress1.addEventListener(
+    "click", 
+    (normalScreen = () => {
+        screenCompress1.classList.add("esconda")
+        expandirTela1.classList.remove("esconda")
+        if (document.fullscreenElement) {
+            if(document.exitFullscreen) {
+                document.exitFullscreen();
+            } else if(document.mozCancelFullScreen) {
+                document.mozCancelFullScreen();
+            } else if(document.webkitExitFullScreen) {
+                document.webkitExitFullScreen();
+            }
+        }
+    })
+)

@@ -633,3 +633,15 @@ barraProgresso3.addEventListener(event3[deviceType].click, (event3)=>{
     botaoPausar3.classList.remove("esconda")
     botaoPlay3.classList.add("esconda")
 })
+
+window.onload = () => {
+    //mostra a duração
+    duracaoMaxima1.innerText = formatadorDoTempo1(meuVideo1.duration);
+    slider1()
+
+    duracaoMaxima2.innerText = formatadorDoTempo2(meuVideo2.duration);
+    slider2()
+
+    duracaoMaxima3.innerText = formatadorDoTempo3(meuVideo3.duration);
+    slider3()
+}

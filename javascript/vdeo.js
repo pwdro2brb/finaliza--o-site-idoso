@@ -488,3 +488,37 @@ screenCompress1.addEventListener(
         }
     })
 )
+
+screenCompress2.addEventListener(
+    "click", 
+    (normalScreen = () => {
+        screenCompress2.classList.add("esconda")
+        expandirTela2.classList.remove("esconda")
+        if (document.fullscreenElement) {
+            if(document.exitFullscreen) {
+                document.exitFullscreen();
+            } else if(document.mozCancelFullScreen) {
+                document.mozCancelFullScreen();
+            } else if(document.webkitExitFullScreen) {
+                document.webkitExitFullScreen();
+            }
+        }
+    })
+)
+
+screenCompress3.addEventListener(
+    "click", 
+    (normalScreen = () => {
+        screenCompress3.classList.add("esconda")
+        expandirTela3.classList.remove("esconda")
+        if (document.fullscreenElement) {
+            if(document.exitFullscreen) {
+                document.exitFullscreen();
+            } else if(document.mozCancelFullScreen) {
+                document.mozCancelFullScreen();
+            } else if(document.webkitExitFullScreen) {
+                document.webkitExitFullScreen();
+            }
+        }
+    })
+)

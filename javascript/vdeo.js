@@ -522,3 +522,12 @@ screenCompress3.addEventListener(
         }
     })
 )
+
+//formatar tempo
+const formatadorDoTempo1 = (timeInput) => {
+    let minute = math.floor(timeInput / 60);
+    minute = minute < 10 ? "0" + minute : minute
+    let second = math.floor(timeInput % 60);
+    second = second < 10 ? "0" + second : second
+    return `${minute}:${second}`
+}

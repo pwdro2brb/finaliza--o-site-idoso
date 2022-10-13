@@ -531,3 +531,19 @@ const formatadorDoTempo1 = (timeInput) => {
     second = second < 10 ? "0" + second : second
     return `${minute}:${second}`
 }
+
+const formatadorDoTempo2 = (timeInput) => {
+    let minute = math.floor(timeInput / 60);
+    minute = minute < 10 ? "0" + minute : minute
+    let second = math.floor(timeInput % 60);
+    second = second < 10 ? "0" + second : second
+    return `${minute}:${second}`
+}
+
+const formatadorDoTempo3 = (timeInput) => {
+    let minute = math.floor(timeInput / 60);
+    minute = minute < 10 ? "0" + minute : minute
+    let second = math.floor(timeInput % 60);
+    second = second < 10 ? "0" + second : second
+    return `${minute}:${second}`
+}

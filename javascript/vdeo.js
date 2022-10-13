@@ -296,6 +296,7 @@ const muter1 = () =>{
     meuVideo1.volume = 0
     numeroVolume1.innerHTML = 0
     alcanceVolume1.value = 0
+    alcanceVolume1.style = 0
 }
 
 //Quando o usuário apertar para mutar quando estivir no volume alto ou baixo
@@ -313,6 +314,7 @@ const muter2 = () =>{
     meuVideo2.volume = 0
     numeroVolume2.innerHTML = 0
     alcanceVolume2.value = 0
+    alcanceVolume2.style = 0
 }
 
 alto2.addEventListener("click", muter2)
@@ -328,6 +330,7 @@ const muter3 = () =>{
     meuVideo3.volume = 0
     numeroVolume3.innerHTML = 0
     alcanceVolume3.value = 0
+    alcanceVolume3.style = 0
 }
 
 alto3.addEventListener("click", muter3)
@@ -342,7 +345,7 @@ alcanceVolume1.addEventListener("input", () => {
     meuVideo1.volume = valorVolume1
     numeroVolume1.innerHTML = alcanceVolume1.value
     //Mostrar os icones de volume
-    if(alcanceVolume1.value < 50 ) {
+    if(alcanceVolume1.value < 50 && alcanceVolume1.value > 0 ) {
         baixo1.classList.remove("esconda")
         alto1.classList.add("esconda")
         mute1.classList.add("esconda")
@@ -350,7 +353,11 @@ alcanceVolume1.addEventListener("input", () => {
         baixo1.classList.add("esconda")
         alto1.classList.remove("esconda")
         mute1.classList.add("esconda")  
-    } 
+    } else if (alcanceVolume1.value < 1) {
+        baixo1.classList.add("esconda")
+        alto1.classList.add("esconda")
+        mute1.classList.remove("esconda")  
+    }
 })
 
 alcanceVolume2.addEventListener("input", () => {
@@ -359,7 +366,7 @@ alcanceVolume2.addEventListener("input", () => {
     meuVideo2.volume = valorVolume2
     numeroVolume2.innerHTML = alcanceVolume2.value
     //Mostrar os icones de volume
-    if(alcanceVolume2.value < 50 ) {
+    if(alcanceVolume2.value < 50 && alcanceVolume2.value > 0 ) {
         baixo2.classList.remove("esconda")
         alto2.classList.add("esconda")
         mute2.classList.add("esconda")
@@ -367,7 +374,11 @@ alcanceVolume2.addEventListener("input", () => {
         baixo2.classList.add("esconda")
         alto2.classList.remove("esconda")
         mute2.classList.add("esconda")  
-    } 
+    } else if (alcanceVolume2.value < 1) {
+        baixo2.classList.add("esconda")
+        alto2.classList.add("esconda")
+        mute2.classList.remove("esconda")  
+    }
 })
 
 alcanceVolume3.addEventListener("input", () => {
@@ -376,7 +387,7 @@ alcanceVolume3.addEventListener("input", () => {
     meuVideo3.volume = valorVolume3
     numeroVolume3.innerHTML = alcanceVolume3.value
     //Mostrar os icones de volume
-    if(alcanceVolume3.value < 50 ) {
+    if(alcanceVolume3.value < 50 && alcanceVolume3.value > 0 ) {
         baixo3.classList.remove("esconda")
         alto3.classList.add("esconda")
         mute3.classList.add("esconda")
@@ -384,7 +395,11 @@ alcanceVolume3.addEventListener("input", () => {
         baixo3.classList.add("esconda")
         alto3.classList.remove("esconda")
         mute3.classList.add("esconda")  
-    } 
+    } else if (alcanceVolume3.value < 1) {
+        baixo3.classList.add("esconda")
+        alto3.classList.add("esconda")
+        mute3.classList.remove("esconda")  
+    }
 })
 
 

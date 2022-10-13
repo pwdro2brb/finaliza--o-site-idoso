@@ -525,25 +525,40 @@ screenCompress3.addEventListener(
 
 //formatar tempo
 const formatadorDoTempo1 = (timeInput) => {
-    let minute = math.floor(timeInput / 60);
+    let minute = Math.floor(timeInput / 60);
     minute = minute < 10 ? "0" + minute : minute
-    let second = math.floor(timeInput % 60);
+    let second = Math.floor(timeInput % 60);
     second = second < 10 ? "0" + second : second
     return `${minute}:${second}`
 }
 
 const formatadorDoTempo2 = (timeInput) => {
-    let minute = math.floor(timeInput / 60);
+    let minute = Math.floor(timeInput / 60);
     minute = minute < 10 ? "0" + minute : minute
-    let second = math.floor(timeInput % 60);
+    let second = Math.floor(timeInput % 60);
     second = second < 10 ? "0" + second : second
     return `${minute}:${second}`
 }
 
 const formatadorDoTempo3 = (timeInput) => {
-    let minute = math.floor(timeInput / 60);
+    let minute = Math.floor(timeInput / 60);
     minute = minute < 10 ? "0" + minute : minute
-    let second = math.floor(timeInput % 60);
+    let second = Math.floor(timeInput % 60);
     second = second < 10 ? "0" + second : second
     return `${minute}:${second}`
 }
+
+//Atualizar barra de progresso todo momento
+
+setInterval(() => {
+    referenciaTempoAtual1.innerHTML = formatadorDoTempo1(meuVideo1.currentTime)
+    progressoAtual1.style.width = (meuVideo1.currentTime / meuVideo1.duration.toFixed(3)) * 100 + "%"
+}, 1000)
+
+
+
+//Atualiza o temporizador
+
+meuVideo1.addEventListener("timeupdate", () => {
+    referenciaTempoAtual1.innerHTML = formatadorDoTempo1(meuVideo1.currentTime)
+})

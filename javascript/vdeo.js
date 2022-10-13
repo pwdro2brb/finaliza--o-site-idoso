@@ -555,10 +555,28 @@ setInterval(() => {
     progressoAtual1.style.width = (meuVideo1.currentTime / meuVideo1.duration.toFixed(3)) * 100 + "%"
 }, 1000)
 
+setInterval(() => {
+    referenciaTempoAtual2.innerHTML = formatadorDoTempo2(meuVideo2.currentTime)
+    progressoAtual2.style.width = (meuVideo2.currentTime / meuVideo2.duration.toFixed(3)) * 100 + "%"
+}, 1000)
+
+setInterval(() => {
+    referenciaTempoAtual3.innerHTML = formatadorDoTempo1(meuVideo3.currentTime)
+    progressoAtual3.style.width = (meuVideo3.currentTime / meuVideo3.duration.toFixed(3)) * 100 + "%"
+}, 1000)
+
 
 
 //Atualiza o temporizador
 
 meuVideo1.addEventListener("timeupdate", () => {
     referenciaTempoAtual1.innerHTML = formatadorDoTempo1(meuVideo1.currentTime)
+})
+
+meuVideo2.addEventListener("timeupdate", () => {
+    referenciaTempoAtual2.innerHTML = formatadorDoTempo2(meuVideo2.currentTime)
+})
+
+meuVideo3.addEventListener("timeupdate", () => {
+    referenciaTempoAtual3.innerHTML = formatadorDoTempo1(meuVideo3.currentTime)
 })

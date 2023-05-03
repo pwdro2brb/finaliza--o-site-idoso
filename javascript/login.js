@@ -35,7 +35,7 @@ const verificadorSenha= (senha2) =>{
           return regex.test(senha2) && senha2.length >= 4;
    }
    
-   //verificador de texto (para os inputs que deveriam conter apenas texto)
+//verificador de texto (para os inputs que deveriam conter apenas texto)
    
    const verificadorTexto = (text) =>{
        const regex = /^[a-zA-Z]{3,}$/

@@ -1,6 +1,162 @@
 <!DOCTYPE html>
 <html>
+<style>
 
+ *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+  }
+
+ body{
+       background-color:#d1ffea;
+  }
+    
+ @-webkit-keyframes AnimationName {
+        0%{background-position:0% 50%}
+        50%{background-position:100% 50%}
+        100%{background-position:0% 50%}
+    }
+ @-moz-keyframes AnimationName {
+        0%{background-position:0% 50%}
+        50%{background-position:100% 50%}
+        100%{background-position:0% 50%}
+    }
+ @keyframes AnimationName {
+        0%{background-position:0% 50%}
+        50%{background-position:100% 50%}
+        100%{background-position:0% 50%}
+    }
+    
+  .form{
+  padding-top:100px;
+    left:50%;
+    top:50%;
+    border-radius:10px ;
+    padding:60px;
+    width:min-content;
+    display: inline-grid;
+    background-color:#00eeffff;
+        justify-content: space-around;
+        justify-items: center;
+        margin-top: 10vw;
+  }
+  .logo {
+    background-color: #00b3b0;
+    height: auto;
+    padding: 2vw;
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+    flex-wrap: nowrap;
+    font-size: 2.4vmin;
+    flex-direction: row-reverse;
+  } 
+  button{
+    font-size: 3.44vmin;
+    font-family:'Poppings',sans-serif;
+    background:linear-gradient(90deg,#0062ff,#0062ff,#0062ff) ;
+    height: 8vmin;
+    width: 65vmin;
+    border:none;
+    color:rgb(255, 255, 255);
+    border-radius:20px;
+    outline:none;
+    cursor:pointer;
+    margin: 5mm;
+  }
+
+ hr {
+  display: none;
+  }
+
+  .container{
+    width: 90vw;
+    max-width: 600px;
+    padding:2em 1.5em;
+    background-color: #ced6ff;
+    margin: 1em auto;
+    border-radius: 0.5em;
+  }
+  h4{
+    font-size: 1.5em;
+    margin: auto;
+  }
+
+  .secao-input{
+    margin: 0.5em 0;
+    transform: translate(-0%,-0%);
+    top: 50%;
+    left: 50%;
+  }
+
+  label, .menssagem-Error{
+    display: block;
+    font-size: 1em;
+  }
+  
+  label{
+    margin-bottom: 0.5em;
+    font-weight: 500;
+  }
+
+  .menssagem-Error{
+    margin-top: 0.2em;
+  }
+  input{
+    display: block;
+    outline: none;
+    width: 100%;
+    padding: 0.5em;
+    border-radius: 0.3em;
+  }
+
+  input{
+    padding: 1em 0.5em;
+    border: 1.5px solid white;
+  }
+  .required-color{
+    color: #ff4747;
+  }
+
+  .Error{
+    border-color: #ff4747;
+  }
+  .valid{
+    border-color: #37a137;
+  }
+
+  .esconda{
+    display: none;
+  }
+
+ #olhos{
+  position: absolute;
+  right: 15px;
+  transform: translate(0%, -140%);
+  /* top: 70%; */
+  cursor: pointer;
+}
+
+ ::placeholder{
+  color: #9a9a9a;
+  font-weight: 400;
+}
+
+ .fa{
+  font-size: 20px;
+  color: #7a797e;
+}
+  @media only screen and (max-width: 450px) {
+    .container{
+      font-size: 14px;
+    }
+  }
+
+</style>
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -16,12 +172,21 @@
     crossorigin="anonymous"
   />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+ 
   <link href="../estilos/estilo_telas_login_cadastro.css" rel="stylesheet" type="text/css" />
-
   <title>{% block title %}Home{% endblock %}</title>
 </head>
 <body>
 
+  <div class="logo"> 
+
+     <h1>Idosos inomináveis</h1>
+     <div id="image-container"></div>
+
+  <br />
+ <br />
+
+  </div>
   
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <button
@@ -82,8 +247,20 @@ src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
 integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
 crossorigin="anonymous"
 ></script>
+<script>
+  // Select the image container element
+  const imageContainer = document.getElementById("image-container");
 
-<script src="../javascript/script_tela_cadastro.js"></script>
+  // Create an image element
+  const imageElement = document.createElement("img");
+
+  // Set the source URL of the image
+  imageElement.src = "https://lh3.googleusercontent.com/LtxE8HGMRdX8KR2dm4an5iNwTyQgwGTqEZLh0SmICM0VTMQM8X2MafEskSloAtwgG_pO=s128";
+
+  // Add the image element to the container
+  imageContainer.appendChild(imageElement);
+</script>
+
 </body>
 
 </html>

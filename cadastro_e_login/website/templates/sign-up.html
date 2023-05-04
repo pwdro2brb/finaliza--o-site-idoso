@@ -1,0 +1,87 @@
+{% extends "base.html" %} {% block title %}Sign Up{% endblock %} {% block
+    content %}
+
+    <center>
+        <div class="container">
+      
+            <div class="logo"> 
+      
+             <h1>Idosos inomináveis</h1>
+       <img src="../image/ICONE_SITE.jpg" >
+      </div>
+      
+          <br />
+         <br />
+      
+             <form method="POST">
+              <h4>Cadastro Tutor</h4>
+      
+              <br />
+      
+              <div class="secao-input">
+                <label> Nome do tutor <span class="required-color">*</span></label> 
+                <input type="text" placeholder="Digite o nome do tutor aqui" id="input-nome-tutor" required>
+                <span id="Error-nome-tutor" class="esconda required-color menssagem-Error">Valor inválido</span>
+                <span id="vazio-nome-tutor" class="esconda required-color menssagem-Error">O nome do tutor não pode estar vazio</span>
+                </div>
+      
+            <br><br>
+      
+         <div class="secao-input">
+          <label for="Nome idoso">Nome do idoso <span class="required-color" >*</span></label>
+          <input type="text" placeholder="Coloque o nome do idoso" id="nome-idoso" required>
+          <span id="Error-nome-idoso" class="esconda required-color menssagem-Error" >Dados invalidos</span>
+          <span id="vazio-nome-idoso" class="esconda required-color menssagem-Error" >Nome do idoso não pode estar vazio</span>
+        </div>
+      
+            <br> <br>
+      
+      <div class="secao-input">
+        <label>Email <span class="required-color">*</span></label>
+        <input type="email" placeholder="Digite o seu e-mail aqui" id="Email" required>
+        <span id="Error-email" class="esconda required-color menssagem-Error">Email invalido</span>
+        <span id="Email-vazio" class="esconda required-color menssagem-Error">O email não pode ser vazio</span>
+      </div>
+      
+            <br><br>
+      
+            <div class="secao-input">
+              <label>Número de telefone do Tutor <span class="required-color">*</span></label>
+             <input type="text" placeholder="Digite o número do tutor aqui " id="telefone" required>
+             <span id="Error-telefone" class="esconda required-color menssagem-Error">O número de telefone deve ter 11 digitos</span>
+             <span id="telefone-vazio" class="esconda required-color menssagem-Error">O telefone não pode estar vazio</span>
+            </div>
+      
+            <br><br>
+              
+            <div class="secao-input">
+              <label> senha <span class="required-color">*</span></label>
+              <input type="password" placeholder="Digite a senha aqui" id="senha" required> 
+              <span id="olhos"><i class="fa fa-eye" aria-hidden="true" id="olho1" onclick="mudar1()"></i></span>
+              <span id="Error-senha" class="esconda required-color menssagem-Error">A senha deve ter letra maiuscula e minuscula, números, caracteres especiais e a do mínimo de 5 digitos</span>
+              <span id="senha-vazia" class="esconda required-color menssagem-Error">A senha não pode estar vazia</span>
+            </div>
+      
+            <br><br>
+      
+            <div class="secao-input">
+              <label>Confirmar senha <span class="required-color">*</span></label>
+              <input type="password" placeholder="Confirmar senha" id="verificar-senha" required>
+              <span id="olhos"><i class="fa fa-eye" aria-hidden="true" id="olho2" onclick="mudar2()"></i></span>
+              <span id="Error-verificar-senha" class="esconda required-color menssagem-Error">Deve ser igual a senha anterior</span>
+              <span id="verificar-senha-vazio" class="esconda required-color menssagem-Error">A senha não pode ser vazia</span>
+            </div>
+      
+            <br><br> 
+      
+              <button id="botao-cadastrar"> Cadastrar </button>
+      
+            <br><br>
+      
+           <button onclick="window.location.href ='./login.html'"> Já tenho cadastro</button>
+      
+           </form>
+      
+         </div>
+
+{% endblock %}

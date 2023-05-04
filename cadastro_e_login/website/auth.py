@@ -18,7 +18,7 @@ def login():
             if check_password_hash(user.password, password):
                 flash('Logado com sucesso!!', category='success')
                 login_user(user, remember=True)
-                return redirect(url_for('views.index'))
+                return redirect(url_for('views.base'))
             else:
                 flash('Senha incorreta, tente novamente.', category='error')
         else:
@@ -34,7 +34,7 @@ def logout():
     return redirect(url_for('auth.login'))
 
 
-@auth.route('/index', methods=['GET', 'POST'])
+@auth.route('/sign-up', methods=['GET', 'POST'])
 def sign_up():
     if request.method == 'POST':
         email = request.form.get('Email')
@@ -66,6 +66,6 @@ def sign_up():
             db.session.commit()  
             login_user(user, remember=True)
             flash('Conta criada !!!', category='success')
-            return redirect(url_for('views.index'))
+            return redirect(url_for('views.base'))
 
     return render_template("sign-up.html", user = current_user)

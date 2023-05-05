@@ -46,9 +46,9 @@ def sign_up():
         user = User.query.filter_by(email=email).first()
        
         if user:
-            flash('Email já existe', category='error')
+            flash('Email já existente', category='error')
         elif len(email) < 4:
-            flash('O email tem que ser maior que 3 cracteres', category='error')
+            flash('O email tem que ser maior que 3 caracteres', category='error')
         elif len(Nome_tutor) < 2:
             flash('O nome do tutor tem que ser maior que 1 caracter', category='error')
         elif len(telefone) < 8:
@@ -57,8 +57,8 @@ def sign_up():
             flash('O nome do idoso tem que ser maior que 1 caracter', category='error')
         elif password1 != password2:
             flash('Senhas diferentes', category='error')
-        elif len(password1) < 7:
-            flash('A senha tem que ser maior que 7 caracteres', category='error')
+        elif len(password1) < 5:
+            flash('A senha tem que ser maior que 5 caracteres', category='error')
         else:
             new_user = User(email=email, nome_idoso=nome_idoso, telefone=telefone, Nome_tutor=Nome_tutor, password=generate_password_hash(
                 password1, method='sha256'))

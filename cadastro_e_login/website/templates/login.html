@@ -1,7 +1,166 @@
 {% extends "base.html" %} {% block title %}Login{% endblock %} {% block content
     %}
+
+    <style>
+
+        *{
+           margin: 0;
+           padding: 0;
+           box-sizing: border-box;
+           font-family: "Poppins", sans-serif;
+         }
+       
+        body{
+              background-color:#d1ffea;
+         }
+           
+        @-webkit-keyframes AnimationName {
+               0%{background-position:0% 50%}
+               50%{background-position:100% 50%}
+               100%{background-position:0% 50%}
+           }
+        @-moz-keyframes AnimationName {
+               0%{background-position:0% 50%}
+               50%{background-position:100% 50%}
+               100%{background-position:0% 50%}
+           }
+        @keyframes AnimationName {
+               0%{background-position:0% 50%}
+               50%{background-position:100% 50%}
+               100%{background-position:0% 50%}
+           }
+           
+         .form{
+         padding-top:100px;
+           left:50%;
+           top:50%;
+           border-radius:10px ;
+           padding:60px;
+           width:min-content;
+           display: inline-grid;
+           background-color:#00eeffff;
+               justify-content: space-around;
+               justify-items: center;
+               margin-top: 10vw;
+         }
+         .logo {
+           background-color: #00b3b0;
+           height: auto;
+           padding: 2vw;
+           position: relative;
+           display: flex;
+           justify-content: space-around;
+           align-items: center;
+           align-content: center;
+           flex-wrap: nowrap;
+           font-size: 2.4vmin;
+           flex-direction: row-reverse;
+         } 
+
+         .buttona{
+           font-size: 3.44vmin;
+           font-family:'Poppings',sans-serif;
+           background:linear-gradient(90deg,#0062ff,#0062ff,#0062ff) ;
+           height: 8vmin;
+           width: 65vmin;
+           border:none;
+           color:rgb(255, 255, 255);
+           border-radius:20px;
+           outline:none;
+           cursor:pointer;
+           margin: 5mm;
+         }
+       
+        hr {
+         display: none;
+         }
+       
+         .containeer{
+           max-width: 600px;
+           padding:2em 1.5em;
+           background-color: #ced6ff;
+           margin: 1em auto;
+           border-radius: 0.5em;
+         }
+         h4{
+           font-size: 1.5em;
+           margin: auto;
+         }
+       
+         .secao-input{
+           margin: 0.5em 0;
+           transform: translate(-0%,-0%);
+           top: 50%;
+           left: 50%;
+         }
+       
+         label, .menssagem-Error{
+           display: block;
+           font-size: 1em;
+         }
+         
+         label{
+           margin-bottom: 0.5em;
+           font-weight: 500;
+         }
+       
+         .menssagem-Error{
+           margin-top: 0.2em;
+         }
+         input{
+           display: block;
+           outline: none;
+           width: 100%;
+           padding: 0.5em;
+           border-radius: 0.3em;
+         }
+       
+         input{
+           padding: 1em 0.5em;
+           border: 1.5px solid white;
+         }
+         .required-color{
+           color: #ff4747;
+         }
+       
+         .Error{
+           border-color: #ff4747;
+         }
+         .valid{
+           border-color: #37a137;
+         }
+       
+         .esconda{
+           display: none;
+         }
+       
+        #olhos{
+         position: absolute;
+         right: 15px;
+         transform: translate(0%, -140%);
+         /* top: 70%; */
+         cursor: pointer;
+       }
+       
+        ::placeholder{
+         color: #9a9a9a;
+         font-weight: 400;
+       }
+       
+        .fa{
+         font-size: 20px;
+         color: #7a797e;
+       }
+         @media only screen and (max-width: 450px) {
+           .containeer{
+             font-size: 14px;
+           }
+         }
+       
+       </style>
+
   <center>
-  <div class="container">
+  <div class="containeer">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link href="../estilos/estilo_telas_login_cadastro.css" rel="stylesheet" type="text/css" />
 </head>
@@ -18,7 +177,6 @@
     <div class="secao-input">
       <label>Nome do idoso <span class="required-color">*</span></label>
      <input type="text" placeholder="Digite o nome do idoso aqui " id="login-idoso" required>
-     <span id="Error-nome-idoso-login" class="esconda required-color menssagem-Error" >Dados invalidos</span>
     <span id="vazio-nome-idoso-login" class="esconda required-color menssagem-Error" >Nome do idoso não pode estar vazio</span>
     </div>
 
@@ -28,141 +186,20 @@
         <label> senha <span class="required-color">*</span></label>
         <input type="password" placeholder="Digite a senha aqui" id="senha2" required>
         <span id="olhos" onclick="mudar3()"><i class="fa fa-eye" aria-hidden="true" id="olho3"></i></span>
-        <span id="Error-senha" class="esconda required-color menssagem-Error">A senha deve ter letra maiuscula e minuscula, números, caracteres especiais e a partir de 5 digitos</span>
         <span id="senha-vazia" class="esconda required-color menssagem-Error">A senha não pode estar vazia</span>
       </div>
 
   <br><br> 
 
-  <button id="botao-logar" type="submit"> logar </button>
+  <button id="botao-logar" type="submit" class="buttona"> logar </button>
  
 </form>
 
-
-  
-<button onclick="window.location.href ='./base.html'"> Voltar para cadastro</button>
 
   <script>
     //variável para ocultar e mostra senha
 
     var state = false
-    
-    //Nome do idoso no login
-    
-    let login_idoso_input = document.getElementById("login-idoso")
-    let erro_idoso_login = document.getElementById("Error-nome-idoso-login")
-    let vazio_idoso_login = document.getElementById("vazio-nome-idoso-login")
-    
-    //Senha no login
-    
-    let login_Senha_input = document.getElementById("senha2")
-    let error_senha = document.getElementById("Error-senha")
-    let vazio_senha = document.getElementById("senha-vazia")
-    
-    //Botão logar 
-    
-    let logar_botao = document.getElementById("botao-logar")
-    
-    //validador 
-    
-    let classesValidas1 = false
-    let classesInvalidas1 = true
-    
-    let classesValidas2 = false
-    let classesInvalidas2 = true
-    
-    //verificador de senha
-    
-    const verificadorSenha= (senha2) =>{
-        //Valores que devem existir na senha, não precisa ser todos  
-           const regex = 
-              /^(?=.+[a-z])(?=.+[A-Z])(?=.+[0-9])(?=.+[\$\%\^\&\!@\#\*\(\)\+\=`~\?\>\<])/ 
-              return regex.test(senha2) && senha2.length >= 4;
-       }
-       
-    //verificador de texto (para os inputs que deveriam conter apenas texto)
-       
-       const verificadorTexto = (text) =>{
-           const regex = /^[a-zA-Z]{3,}$/
-           return regex.test(text)
-       } 
-    
-    //Para os inputs vazios - accepts(input vazio, erro para aquele input e outros erros)
-    
-    const vazioUpdate = (
-        inputReference,
-        emptyErrorReference,
-        otherErrorReference
-        ) => {
-            if (!inputReference.value){
-                //input está vazio/null
-                emptyErrorReference.classList.remove("esconda")
-                otherErrorReference.classList.add("esconda")
-                inputReference.classList.add("Error")
-            } else {
-                //input tem algum conteúdo
-                emptyErrorReference.classList.add("esconda")
-            }
-        }
-    
-    // para o estilo e a aparição da menssagem de erro
-    
-    const errorUpdate = (inputReference, errorReference) => {
-        errorReference.classList.remove("esconda")
-        inputReference.classList.remove("valid")
-        inputReference.classList.add("Error")
-    }
-    
-    // para nenhum erros
-    
-    const validInput = (inputReference) => {
-        inputReference.classList.remove("Error")
-        inputReference.classList.add("valid")
-    }
-    
-    //Nome do idoso para login
-    
-    login_idoso_input.addEventListener("input", () =>{
-        if (verificadorTexto(login_idoso_input.value)){
-            //se a verificação retornar verdadeiro
-            erro_idoso_login.classList.add("esconda")
-            validInput(login_idoso_input)
-             classesValidas1 = true
-             classesInvalidas1 = false
-        } else {
-        //para falso
-        errorUpdate(login_idoso_input, erro_idoso_login)
-        //checador de vazio
-        vazioUpdate(login_idoso_input, vazio_idoso_login, erro_idoso_login)
-        }
-    })
-    
-    //senha para login
-    
-    login_Senha_input.addEventListener("input", () =>{
-        if (verificadorSenha(login_Senha_input.value)){
-            //se a verificação retornar verdadeiro
-            error_senha.classList.add("esconda")
-            validInput( login_Senha_input)
-            classesValidas2 = true
-            classesInvalidas2 = false
-        } else {
-        //para falso
-        errorUpdate(login_Senha_input, error_senha)
-        //checador de vazio
-        vazioUpdate(login_Senha_input, vazio_senha, error_senha)
-        }
-    })
-    
-    //botão de login
-    
-    logar_botao.addEventListener("click", () => {
-        if (classesValidas1 == true && classesInvalidas1 == false && classesValidas2 == true && classesInvalidas2 == false){
-            window.location.href ='../tela_inicial.html'
-        }else{
-            alert("Login incompleto, preencha o formulário corretamente")
-        }
-     })
     
     //Função para mostrar a senha ao apertar no olho e parar de mostrar se apertar de novo
     

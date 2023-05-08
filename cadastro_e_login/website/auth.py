@@ -50,11 +50,11 @@ def sign_up():
         elif len(email) < 4:
             flash('O email tem que ser maior que 3 caracteres', category='error')
         elif len(Nome_tutor) < 2:
-            flash('O nome do tutor tem que ser maior que 1 caracter', category='error')
+            flash('O nome do tutor tem que ser maior que 3 caracter', category='error')
         elif len(telefone) < 8:
             flash('O telefone tem que ter mais que 8 digitos', category='error')
         elif len(nome_idoso) < 2:
-            flash('O nome do idoso tem que ser maior que 1 caracter', category='error')
+            flash('O nome do idoso tem que ser maior que 3 caracter', category='error')
         elif password1 != password2:
             flash('Senhas diferentes', category='error')
         elif len(password1) < 5:

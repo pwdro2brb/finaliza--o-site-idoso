@@ -55,13 +55,8 @@
        font-size: 2.4vmin;
        flex-direction: row-reverse;
      } 
-     .alert-danger {
-       color: #721c24;
-       background-color: #f8d7da;
-       border-color: #f5c6cb;
-       display: flex;
-   }
-     button{
+
+     .buttona{
        font-size: 3.44vmin;
        font-family:'Poppings',sans-serif;
        background:linear-gradient(90deg,#0062ff,#0062ff,#0062ff) ;
@@ -79,7 +74,7 @@
      display: none;
      }
    
-     .container{
+     .containeer{
        width: 90vw;
        max-width: 600px;
        padding:2em 1.5em;
@@ -157,13 +152,13 @@
      color: #7a797e;
    }
      @media only screen and (max-width: 450px) {
-       .container{
+       .containeer{
          font-size: 14px;
        }
      }
    
    </style>
-
+            <div class="containeer">
               <h4>Cadastro Tutor</h4>
              <form method="POST">
 
@@ -173,7 +168,7 @@
               <div class="secao-input">
                 <label for="input-nome-tutor">Nome do tutor <span class="required-color">*</span></label> 
                 <input type="text" placeholder="Digite o nome do tutor aqui" id="input-nome-tutor" name="input-nome-tutor">
-                <span id="Error-nome-tutor" class="esconda required-color menssagem-Error">Valor inválido</span>
+                <span id="Error-nome-tutor" class="esconda required-color menssagem-Error">Dados inválidos</span>
                 <span id="vazio-nome-tutor" class="esconda required-color menssagem-Error">O nome do tutor não pode estar vazio</span>
                 </div>
       
@@ -210,7 +205,7 @@
               <label for="senha"> senha <span class="required-color">*</span></label>
               <input type="password" placeholder="Digite a senha aqui" id="senha" name="senha"> 
               <span id="olhos"><i class="fa fa-eye" aria-hidden="true" id="olho1" onclick="mudar1()"></i></span>
-              <span id="Error-senha" class="esconda required-color menssagem-Error">A senha deve ter caracteres especiais e no mínimo 5 digitos</span>
+              <span id="Error-senha" class="esconda required-color menssagem-Error">A senha deve ter letras, caracteres especiais e no mínimo 5 digitos</span>
               <span id="senha-vazia" class="esconda required-color menssagem-Error">A senha não pode estar vazia</span>
             </div>
       
@@ -220,14 +215,13 @@
               <label for="verificar-senha">Confirmar senha <span class="required-color">*</span></label>
               <input type="password" placeholder="Confirmar senha" id="verificar-senha" name="verificar-senha">
               <span id="olhos"><i class="fa fa-eye" aria-hidden="true" id="olho2" onclick="mudar2()"></i></span>
-              <span id="Error-verificar-senha" class="esconda required-color menssagem-Error">Deve ser igual a senha anterior</span>
               <span id="verificar-senha-vazio" class="esconda required-color menssagem-Error">A senha não pode ser vazia</span>
             </div>
       
             <br><br> 
-
-              <button id="botao-cadastrar btn btn-primary" type="submit"> Cadastrar </button>
-      
+<center>
+              <button id="botao-cadastrar btn btn-primary" type="submit" class="buttona"> Cadastrar </button>
+</center>
            </form>
       
          </div>

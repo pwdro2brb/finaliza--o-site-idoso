@@ -43,7 +43,7 @@ def sign_up():
         password1 = request.form.get('senha')
         password2 = request.form.get('verificar-senha')
         telefone = request.form.get('telefone')
-        user = User.query.filter_by(email=email).first()
+        user = User.query.filter_by(nome_idoso=nome_idoso).first()
        
         if user:
             flash('Email já existente', category='error')
@@ -66,6 +66,6 @@ def sign_up():
             db.session.commit()  
             login_user(user, remember=True)
             flash('Conta criada !!!', category='success')
-            return redirect(url_for('views.base'))
+            return redirect(url_for('views.home'))
 
     return render_template("sign-up.html", user = current_user)

@@ -203,18 +203,7 @@
     display:block;
     align-items:center;
   }
-  .logo {
-    background-color: #00b3b0;
-    height: auto;
-    padding: 2vw;
-    position: relative;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    align-content: center;
-    flex-wrap: nowrap;
-    flex-direction: row-reverse;
-}
+
   input {
     background-color: #cdc9ff;
     height: 100%;

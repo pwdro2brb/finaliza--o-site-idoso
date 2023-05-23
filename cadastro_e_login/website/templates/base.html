@@ -32,6 +32,10 @@
     flex-direction: row-reverse;
   } 
 
+  .esconda{
+    display:none;
+  }
+
   .container1, .container2, .container3 {
     text-align: center;
     margin-top: 50px;
@@ -74,7 +78,7 @@
 
   <title>{% block title %}Home{% endblock %}</title>
 </head>
-<body>
+<body onload="verificarURL();">
 
   <div class="logo"> 
 
@@ -130,13 +134,13 @@
 
   {% if user.is_authenticated %}
 
-
+<section id="secao">
  <div class="Inicial">
   <div class="container1">
 
-    <h1>Jogos</h1>
+    <h1 onclick="esconderSecao()">Jogos</h1>
 
-    <a href="./jogos/jogos.html" >
+    <a id="jogos" href="/jogos" >
       <div id="image-container1"></div>
     </a>
    
@@ -152,9 +156,9 @@
 
   <br>
   
-</div>
+ </div>
 
-<div class="container3">
+ <div class="container3">
 
     <h1>vídeos</h1>
 
@@ -162,9 +166,26 @@
     <div id="image-container3"></div>
   </a>
     
-</div>
+  </div>
 
-</div> 
+ </div> 
+
+</section>
+
+<script>
+  function verificarURL() {
+    var urlAtual = window.location.href;
+    var secao = document.getElementById('secao');
+
+    // Verificar se a URL contém uma determinada palavra-chave
+    if (urlAtual.indexOf('jogos') !== -1) {
+      secao.classList.add('esconda');
+    } else {
+      secao.classList.remove('esconda');
+    }
+  }
+</script>
+
     {% else %} 
     {% endif %}
     <script

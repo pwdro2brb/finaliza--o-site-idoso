@@ -76,3 +76,8 @@ def sign_up():
 def jogos():
 
    return render_template('jogos.html', user = current_user)
+
+@auth.route('/SOS')
+def SOS():
+
+   return render_template('SOS.html', user = current_user)

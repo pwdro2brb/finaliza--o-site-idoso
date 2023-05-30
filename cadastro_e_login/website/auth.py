@@ -81,3 +81,8 @@ def jogos():
 def SOS():
 
    return render_template('SOS.html', user = current_user)
+
+@auth.route('/Jogo_da_veia')
+def Jogo_da_veia():
+
+   return render_template('Jogo_da_veia.html', user = current_user)

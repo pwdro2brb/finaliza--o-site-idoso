@@ -1,15 +1,5 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-
-  <link href="../estilos/estilo_jogo_da_veia.css" rel="stylesheet" type="text/css" />
-</head>
-
-<body>
- <center>
+{% extends "base.html" %} {% block title %}S.O.S{% endblock %} {% block
+  content %}
    
   <div class="form">
 
@@ -41,7 +31,4 @@
 
   <script src="../javascript/jogo_da_veia.js"></script>
 
-</center>
-</body>
-
-</html>
+{% endblock %}

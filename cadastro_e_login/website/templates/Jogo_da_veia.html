@@ -1,7 +1,171 @@
 {% extends "base.html" %} {% block title %}S.O.S{% endblock %} {% block
   content %}
    
-  <div class="form">
+<style>
+  button{
+    background: linear-gradient(90deg,#0062ff,#0062ff,#0062ff);
+    width: 50%;
+    height: 40px;
+    border: none;
+    font-size: 1.2em;
+    color: rgb(255, 255, 255);
+    border-radius: 20px;
+    outline: none;
+    margin-top: 2%;
+  }
+
+  .form{
+    height: 100%;
+    padding: 2vw;
+    position: relative;
+    border-radius: 10px;
+    background-color: #53bfed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+ }
+ 
+ .board.x .cell:not(.x):not(.circle):hover::after,
+ .board.x .cell:not(.x):not(.circle):hover::before{
+   display:block;
+ }
+ .board{
+   display: grid;
+   width:100%;
+   height:100%;
+   justify-content:center ;
+   align-content:center;
+   align-items:center;
+   grid-template-columns:repeat(3, auto);
+ }
+ .board.x .cell:not(.x):not(.circle):hover::after,
+ .board.x .cell:not(.x):not(.circle):hover::before,
+ .board.circle .cell:not(.x):not(.circle):hover::after{
+   display:block;
+ }
+
+ .cell{
+   width:100px;
+   height:100px;
+   border:2px solid white;
+   display:flex;
+   justify-content:center;
+   align-items:center;
+   position: relative;
+ }
+ .cell.x,
+ .cell.circle{
+   cursor:not-allowed;
+ } 
+ .cell:nth-child(1),
+ .cell:nth-child(2),
+ .cell:nth-child(3){
+   border-top: none;
+ }
+
+ .cell:nth-child(1),
+ .cell:nth-child(4),
+ .cell:nth-child(7){
+   border-left:none;
+ }
+ .cell:nth-child(7),
+ .cell:nth-child(8),
+ .cell:nth-child(9){
+   border-bottom:none;
+ }
+
+ .cell:nth-child(3),
+ .cell:nth-child(6),
+ .cell:nth-child(9){
+   border-right:none;
+ }
+
+ /*X*/
+ .cell.x::before,
+ .cell.x::after,
+ .board.x .cell:not(.x):not(.circle):hover::after,
+ .board.x .cell:not(.x):not(.circle):hover::before{
+   content:"X";
+   font-size:100px;
+   position:absolute;
+ }
+
+ .cell.x::before{
+   transform:rotate(45 deg);
+ }
+ .cell.x::after{
+   transform:rotate(-45 deg);
+ }
+
+ /*círculo*/
+ .cell.circle::before,
+ .cell.circle::after,
+ .board.circle .cell:not(.x):not(.circle):hover::after,
+ .board.circle .cell:not(.x):not(.circle):hover::after{
+   content:"O";
+   color:white;
+   font-size:100px;
+   position:absolute;
+   border-radius:50%;
+ }
+
+ .cell.x::before{
+   transform:rotate(45 deg);
+ }
+ .cell.x::after{
+   transform:rotate(-45 deg);
+ }
+
+ .winning-message {
+   display: none;
+   position: fixed;
+   padding-top: 100px;
+   border-radius: 10px;
+   padding: 50px;
+   width: min-content;
+   background-color: #9cffbf;
+   justify-items: center;
+   margin-top: auto;
+   flex-wrap: wrap;
+   flex-direction: row;
+   align-items: center;
+ }
+
+ .winning-message-buttom{
+   font-family:'Poppings',sans-serif;
+   background:linear-gradient(90deg,#0062ff,#0062ff,#0062ff) ;
+   width: 100%;
+   height: 40px;
+   border:none;
+   font-size:1.2em;
+   color:rgb(255, 255, 255);
+   border-radius:20px;
+   outline:none;
+   cursor:pointer;
+ }
+
+ .winning-message-buttom:hover{
+   background:linear-gradient(90deg,#0062ff,#0062ff,#0062ff) ;
+ }
+
+ .winning-message-text{
+   color:black;
+   font-size:5rem;
+ }
+
+ .show-winning-message {
+  top: 0vh;
+  display: flex;
+  height: 39vh;
+  width: -webkit-fill-available;
+  justify-content: space-around;
+  flex-wrap: nowrap;
+  flex-direction: row;
+ }
+
+</style>
+
+<div class="form">
 
    <div class="board" data-board>
    <div class="cell" data-cell></div>
@@ -20,15 +184,113 @@
       <button class="winning-message-button" data-winning-message-button>reiniciar</button>
       </div>
 
-    <br> <br> <br> <br> <br> <br> <br> <br>
+      <button><a id="jogos" href="/jogos" > voltar </a></button>
+
+</div>
+
+
+<script>
+    const cellElements = document.querySelectorAll('[data-cell]');
+    const board = document.querySelector('[data-board]');
+    const winningMessageTextElement = document.querySelector('[data-winning-message-text]');
+    const winningMessage = document.querySelector('[data-winning-message]');
+    const winningMessageButton = document.querySelector('[data-winning-message-button]')
     
-      <button onclick="window.location.href ='./jogos.html'"> voltar </button>
-
-  </div>
-
-   <br>
-   <br>
-
-  <script src="../javascript/jogo_da_veia.js"></script>
+    let isCircleTurn;
+    
+    const winningCombination = [
+      [0, 1, 2],
+      [3, 4, 5],
+      [6, 7, 8],
+      [0, 3, 6],
+      [1, 4, 7],
+      [2, 5, 8],
+      [0, 4, 8],
+      [2, 4, 6],
+    ];
+    const setBoardHoverClass = () => {
+      board.classList.remove('circle');
+      board.classList.remove('x');
+    
+      if (isCircleTurn) {
+       board.classList.add('circle');
+      } else {
+        board.classList.add('x');
+      }
+    };
+    const startGame = () => {
+      isCircleTurn = false;
+      
+        for (const cell of cellElements) {
+          cell.classList.remove('circle');
+          cell.classList.remove('x');
+          cell.removeEventListener('click', handleClick)
+          cell.addEventListener('click', handleClick, { once: true });
+     }
+    
+      setBoardHoverClass();
+      winningMessage.classList.remove('show-winning-message')
+    };
+    
+    const endGame = (isDraw) => {
+      if(isDraw) {
+        winningMessageTextElement.innerText = 'Empate!!'
+      } else{
+        winningMessageTextElement.innerText = isCircleTurn 
+          ? "O venceu!!"
+          : "X venceu!!"
+      }
+      winningMessage.classList.add("show-winning-message");
+    };
+    
+    const checkForWin = (currentPlayer) =>{
+        return winningCombination.some(combination =>{
+          return combination.every((index)=>{
+            return cellElements[index].classList.contains(currentPlayer)
+          });
+        });
+    };
+    
+    const checkForDraw = () => {
+      return [...cellElements].every(cell =>{
+       return cell.classList.contains('x') || cell.classList.contains('circle');
+      });
+    };
+    
+    const placeMark = (cell, classToAdd) =>{
+        cell.classList.add(classToAdd);
+    };
+    
+    const swapTurns = () => {
+       isCircleTurn = !isCircleTurn;
+      
+      setBoardHoverClass();
+     
+    };
+    
+    const handleClick = (e) => {
+      const cell = e.target;
+      const classToAdd = isCircleTurn ? 'circle' : 'x';
+    
+    
+      placeMark(cell, classToAdd);
+      
+      const isDraw = checkForDraw();
+      
+    const isWin = checkForWin(classToAdd);
+      
+      if (isWin) {
+        endGame(false);
+      } else if (isDraw){ 
+        endGame(true);
+      }else{
+          swapTurns();
+      };
+    };
+    
+    startGame();
+    
+    winningMessageButton.addEventListener("click", startGame);
+  </script>
 
 {% endblock %}

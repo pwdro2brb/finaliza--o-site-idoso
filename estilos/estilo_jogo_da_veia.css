@@ -110,19 +110,6 @@
       justify-items: self-end;
   }
 
-  .logo {
-    background-color: #00b3b0;
-    height: auto;
-    padding: 2vw;
-    position: relative;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    align-content: center;
-    flex-wrap: nowrap;
-    flex-direction: row-reverse;
-}
-
 hr {
   display: none;
 }

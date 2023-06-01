@@ -1,0 +1,33 @@
+{% extends "base.html" %} {% block title %}Jogo da memória{% endblock %} {% block
+  content %}  
+
+  <div class="wrapper">
+
+    <div class="container-de-status">
+
+      <div id="contador-movimento"></div>
+      <div id="time"></div>
+
+    </div>
+
+    <div class="game-container"></div>
+    <button id="pare" class="esconda">Parar o jogo</button>
+
+   </div>
+
+   <div class="container-de-controle">
+
+  <div class="form">
+
+    <p id="resultado"></p>
+    <button id="start">Começar um novo jogo</button> 
+
+   
+   <button> <a id="jogos" href="/jogos" ></button>
+  </div>
+
+   </div>
+
+  <script> </script>
+
+{% endblock %}

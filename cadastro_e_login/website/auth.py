@@ -86,3 +86,8 @@ def SOS():
 def Jogo_da_veia():
 
    return render_template('Jogo_da_veia.html', user = current_user)
+
+@auth.route('/jogo_da_memoria')
+def jogo_da_memoria():
+
+   return render_template('jogo_da_memoria.html', user = current_user)

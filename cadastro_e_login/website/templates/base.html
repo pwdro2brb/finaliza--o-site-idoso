@@ -190,7 +190,11 @@
     }
     else if (urlAtual.indexOf('Jogo_da_veia') !== -1) {
       secao.classList.add('esconda');
-    } else {
+    } 
+    else if (urlAtual.indexOf('jogo_da_memoria') !== -1) {
+      secao.classList.add('esconda');
+    }
+    else {
       secao.classList.remove('esconda');
     }
   }

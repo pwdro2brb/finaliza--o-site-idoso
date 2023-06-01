@@ -38,20 +38,6 @@ body{
     transform: translate(0%, 4%);
 }
 
-#form{
-        height: 100%;
-        padding: 2vw;
-        position: relative;
-        border-radius: 10px;
-        justify-content: center;
-        align-items: baseline;
-        background-color: #53bfed;
-        align-content: center;
-        justify-items: self-end;
-        font-size: 3.44vmin;
-        transform: translate(0%, 1100%);
-    }
-
 a:-webkit-any-link {
     color:rgb(255, 255, 255);
     cursor: default;

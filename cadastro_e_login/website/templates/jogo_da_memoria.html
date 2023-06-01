@@ -1,6 +1,137 @@
 {% extends "base.html" %} {% block title %}Jogo da memória{% endblock %} {% block
   content %}  
 
+<style>
+  .wrapper {
+    box-sizing: content-box;
+    /* width: 26.87em; */
+    padding: 2.5em 3em;
+    background-color: rgba(0,123,255,.25);
+    }
+
+ 
+    .form {
+      border-radius: 10px;
+      padding: 60px;
+      display: flex;
+      background-color: #81f9ff;
+      justify-content: center;
+      align-items: flex-start;
+      align-content: center;
+      flex-wrap: nowrap;
+      flex-direction: column;
+  }
+
+  a:-webkit-any-link {
+    color:rgb(255, 255, 255);
+    cursor: default;
+    text-decoration: none;
+    font-size: 3.44vmin;
+  }
+
+  button{
+        font-size: 3.44vmin;
+        font-family:'Poppings',sans-serif;
+        background:linear-gradient(90deg,#0062ff,#0062ff,#0062ff) ;
+        height: 6.5vmin;
+        width: 50vmin;
+        border:none;
+        color:rgb(255, 255, 255);
+        border-radius:20px;
+        outline:none;
+        cursor:pointer;
+        margin: 5mm;
+  }
+
+  .game-container{
+      position: relative;
+      width: 100%;
+      display: grid;
+      gap: 0.6em;
+    }
+
+    .container-de-status{
+      text-align: right;
+      margin-bottom: 1.2em;
+    }
+
+  .container-de-status span{
+   font-weight: 600;
+  }  
+
+  .container-carta{
+  position: relative;
+    width: 6.25em;
+    height: 6.25em;
+    cursor: pointer;
+  }
+
+  .carta-antes,
+  .carta-depois{
+    position: absolute;
+    border-radius: 5px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 4px solid #000000;
+    transition: transform 0.7s ease-out;
+    backface-visibility: hidden;
+  }
+
+  .carta-depois {
+    background-color: #f4c531;
+    font-size: 2.8em;
+    font-weight: 600;
+    /*transform: translate(133.7%, 45%);*/
+  } 
+   .carta-antes{
+    background-color: #ffffff;
+    transform: rotateY(180deg);
+  }   
+  .container-carta.flipped .carta-depois {
+        transform: rotateY(180deg);
+  } 
+   .container-carta.flipped .carta-antes {
+       transform: rotateY(0deg);
+  }
+  .container-de-controle{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    background-color: #ced6ff;
+    top: 0;
+  }
+  #pare{
+    font-size: 1.1em;
+    display: block;
+    margin: 1.1em auto 0 auto;
+    background-color: #000000;
+    color: #ffffff;
+  }
+  .container-de-controle button{
+    font-size: 3vmin;
+    box-shadow: 0 0.6em 2em rgba(86, 66, 0, 0.2);
+  }
+  .esconda{
+    display: none;
+  }
+  #resul{
+    text-align: center;
+  }
+  #resul h2 {
+    font-size: 2.5em;
+  }
+  #resul h4 {
+    font-size: 1.8em;
+    margin: 0.6em 0 1em 0;
+  }
+</style>
+
   <div class="wrapper">
 
     <div class="container-de-status">
@@ -23,7 +154,9 @@
     <button id="start">Começar um novo jogo</button> 
 
    
-   <button> <a id="jogos" href="/jogos" ></button>
+   <div class="turta">
+    <button><a id="jogos" href="/jogos" > Voltar </a></button> 
+    </div>
   </div>
 
    </div>

@@ -235,17 +235,18 @@
     const cards = document.querySelectorAll(".card")
 
     let cardOne, cardTwo;
+    let disableDeck = false;
 
     function flipCard(e) {
       let clickedCard = e.target; // Pegando a carta clicada pelo usuário
-      if(clickedCard !== cardOne){
+      if(clickedCard !== cardOne && !disableDeck){
         clickedCard.classList.add("flip");
         if(!cardOne) {
           //Retorna o valor da primeira carta á função clickedCard
           return cardOne=clickedCard
         };
         cardTwo = clickedCard;
-      
+        disableDeck = true;
         let cardOneImg = cardOne.querySelector("img").src,
         cardTwoImg = cardTwo.querySelector("img").src;
         matchCards(cardOneImg, cardTwoImg);
@@ -258,7 +259,7 @@
       cardOne.removeEventListener("click", flipCard);
       cardTwo.removeEventListener("click", flipCard);
       cardOne = cardTwo = "";//Deixa ambas as cartas vazia
-      return
+      return disableDeck = false;
      }
      //se duas cartas forem diferentes
      setTimeout(() =>{
@@ -272,6 +273,7 @@
       cardOne.classList.remove("shake", "flip");
       cardTwo.classList.remove("shake", "flip");
       cardOne = cardTwo = "";//Deixa ambas as cartas vazia
+      disableDeck = false;
    }, 1200);
 
     }

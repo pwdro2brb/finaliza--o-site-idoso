@@ -234,6 +234,7 @@
   <script> 
     const cards = document.querySelectorAll(".card")
 
+    let matchedCard = 0;
     let cardOne, cardTwo;
     let disableDeck = false;
 
@@ -256,6 +257,12 @@
 
     function matchCards(img1, img2){
      if(img1 === img2) {
+      matchedCard++;//incrementa 1 toda vez que as cartas forem iguais
+      if(matchedCard==8){
+        setTimeout(() =>{
+          return shuffleCard();
+        }, 1000);// chama a função shuffleCard após 1 minuto
+      }
       cardOne.removeEventListener("click", flipCard);
       cardTwo.removeEventListener("click", flipCard);
       cardOne = cardTwo = "";//Deixa ambas as cartas vazia
@@ -276,6 +283,15 @@
       disableDeck = false;
    }, 1200);
 
+    }
+
+    function shuffleCard(){
+      matchedCard = 0;
+      cardOne = cardTwo = "";
+      cards.forEach(card => {
+        card.classList.remove("flip");
+        card.addEventListener("click", flipCard);
+      })
     }
 
     cards.forEach(card => {// Adicionando evento ao clicar nas cartas

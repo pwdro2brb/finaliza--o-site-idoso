@@ -41,12 +41,15 @@
     height: calc(100% / 4 - 10px);
     width: calc(100% / 4 - 10px);
   }
- .cards .card .view{
+  .cards .card .view{
     width: 100%;
     height: 100%;
+    userr-select: none;
+    pointer-events: none;
     position: absolute;
     background: #fff;
     border-radius:7px;
+    backface-visibility:hidden;
     transition: transform 0.25s linear;
     box-shadow:0 3px 10px rgba(0,0,0,0.1);
   }
@@ -60,10 +63,10 @@
   .card .back-view img{
     max-width: 45px;
   }
-  .card:hover .back-view{
+  .card.flip .back-view{
     transform: rotateY(0);
   }
-  .card:hover .front-view{
+  .card.flip .front-view{
     transform: rotateY(180deg);
   }
  </style>
@@ -209,7 +212,37 @@
    </div>
 
   <script> 
-    
+    const cards = document.querySelectorAll(".card")
+
+    let cardOne, cardTwo;
+
+    function flipCard(e) {
+      let clickedCard = e.target; // Pegando a carta clicada pelo usuário
+      if(clickedCard !== cardOne){
+        clickedCard.classList.add("flip");
+        if(!cardOne) {
+          //Retorna o valor da primeira carta á função clickedCard
+          return cardOne=clickedCard
+        };
+        cardTwo = clickedCard;
+      
+        let cardOneImg = cardOne.querySelector("img").src,
+        cardTwoImg = cardTwo.querySelector("img").src;
+        matchCards(cardOneImg, cardTwoImg);
+
+      }  
+    }
+
+    function matchCards(img1, img2){
+      console.log(img1, img2)
+    }
+
+    cards.forEach(card => {// Adicionando evento ao clicar nas cartas
+      card.addEventListener("click", flipCard);
+    })
+
+
+
   </script>
 
 {% endblock %}

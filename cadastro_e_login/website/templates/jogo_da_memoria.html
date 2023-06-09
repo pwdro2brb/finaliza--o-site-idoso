@@ -41,6 +41,26 @@
     height: calc(100% / 4 - 10px);
     width: calc(100% / 4 - 10px);
   }
+  .card.shake{
+    animation: shake 0.35s ease-in-out;
+  }
+  @keyframes shake{
+    0%, 100%{
+      transform: translateX(0)
+    }
+    20%{
+      transform: translateX(-13px)
+    }
+    40%{
+      transform: translateX(13px)
+    }
+    60%{
+      transform: translateX(-8px)
+    }
+    80%{
+      transform: translateX(8px)
+    }
+  }
   .cards .card .view{
     width: 100%;
     height: 100%;
@@ -234,7 +254,26 @@
     }
 
     function matchCards(img1, img2){
-      console.log(img1, img2)
+     if(img1 === img2) {
+      cardOne.removeEventListener("click", flipCard);
+      cardTwo.removeEventListener("click", flipCard);
+      cardOne = cardTwo = "";//Deixa ambas as cartas vazia
+      return
+     }
+     //se duas cartas forem diferentes
+     setTimeout(() =>{
+        //Adicionando o efeito de tremida para as duas cartas depois de 400ms
+        cardOne.classList.add("shake");
+        cardTwo.classList.add("shake");
+     }, 400);
+
+     setTimeout(() =>{
+      //Remove o efeito de tremida e virada para as duas cartas depois de 1.2 segundos
+      cardOne.classList.remove("shake", "flip");
+      cardTwo.classList.remove("shake", "flip");
+      cardOne = cardTwo = "";//Deixa ambas as cartas vazia
+   }, 1200);
+
     }
 
     cards.forEach(card => {// Adicionando evento ao clicar nas cartas

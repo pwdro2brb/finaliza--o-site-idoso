@@ -4,11 +4,28 @@
  <style>
   @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;display=swap');
   .corpo{
-    display:flex;
+    display: flex;
     align-items: center;
-    justify-content:center;
     min-height: 100vh;
-    background: #6563ff
+    background: #6563ff;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+  .turta{
+    width: -webkit-fill-available;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row-reverse;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+  }
+  .turta button{
+    height: 6vmin;
+    width: 64vmin;
+    border-radius: 5vh;
+    margin: 20px;
   }
   .corpo img{
     width:10vh;
@@ -222,11 +239,16 @@
         </div>
       </li>
     </ul>
-  </div>
- </div>  
-   <div class="turta">
-    <button><a id="jogos" href="/jogos" > Voltar </a></button> 
+   </div> 
+    <div class="turta">
+      <button class="reinicio" onclick="shuffleCard()">Reiniciar o jogo</button> 
     </div>
+    <div class="turta">
+      <button><a id="jogos" href="/jogos" > Voltar </a></button> 
+    </div>
+
+ </div>  
+  
 
 
    </div>
